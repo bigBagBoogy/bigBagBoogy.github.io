@@ -1,0 +1,76 @@
+body {
+  background-color: rgb(50, 49, 51);
+  color: white;
+}
+
+
+#mintButton {    
+    background-color: #2f0051ca;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;    
+    padding: 20px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 6;
+    box-shadow: 0 0 15px white; 
+}
+#mintOnPolygonButton{    
+    background-color: #2f0051ca;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    stroke: black;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 6;
+    box-shadow: 0 0 15px white; 
+}
+
+#checkURIbutton {
+  background-color: #ff0000ca;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 6;
+  box-shadow: 0 0 10px white; /* Add this line */
+}
+
+
+
+#uriContainer {
+    font-weight: bold;
+    font-size: 25px;
+    border: 3px solid #ffffff;
+    padding: 50px;
+    margin-top: 20px;
+    white-space: pre-wrap;
+    overflow-x: auto; /* Add a horizontal scrollbar when necessary */
+    max-width: 100%; /* Limit the container's width to the viewport */
+  }
+  #imageContainer {
+    max-width: 25%;
+  }
+  
+  
+  h3 {
+    margin-top: 100px;
+    padding-top: 20px; /* Adjust this value as needed */
+    color: white;
+    padding-left: 20px;
+
+  }
+  .button-container {
+    margin-top: 1%; 
+    text-align: center;
+}
+.button-container button {
+  margin: 20px 0; /* Add 20px margin on the top and bottom of each button */
+}
