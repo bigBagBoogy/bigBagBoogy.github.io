@@ -23,13 +23,15 @@ async function connect() {
 }
 
 export async function mint(tokenUri, preferedNetwork) {
+  const connectedNetwork = await detectConnectedNetwork(); // this will return chainId
+  console.log(`connected network: ${connectedNetwork}`);
   let contractAddress;
   const contractAddressEthereum = "0x0d3F6Baf4639da5120B777E728Fd9eC184C1550f";
   const contractAddressPolygon = "0xda46867287aDB1f7189a19845c498e87F1cca7F9";
   if (preferedNetwork === "ethereum") {
     contractAddress = contractAddressEthereum;
     console.log(`minting ${tokenUri} to Ethereum: ${contractAddressEthereum}`);
-  } else if (preferedNetwork === "polygon") {
+  } else if (preferedNetwork === "0x13881") {
     console.log(`minting ${tokenUri} to Polygon: ${contractAddressPolygon}`);
     contractAddress = contractAddressPolygon;
   }
@@ -89,4 +91,28 @@ export async function encodeImageToBase64(imageUrl) {
 }
 export function testinteraction() {
   console.log("test");
+}
+// helper functions
+// Function to prompt the user to switch networks
+async function promptSwitchNetwork(targetChainId) {
+  if (typeof window.ethereum !== "undefined") {
+    try {
+      // Request to switch to the target network
+      await ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: targetChainId }],
+      });
+      console.log("Switched to the target network.");
+    } catch (error) {
+      console.error("Error switching networks:", error);
+    }
+  }
+}
+// Function to detect connected network
+export async function detectConnectedNetwork() {
+  if (typeof window.ethereum !== "undefined") {
+    const networkId = await ethereum.request({ method: "eth_chainId" }); // Get the chain ID
+    return networkId;
+  }
+  return null;
 }
