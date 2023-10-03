@@ -1,6 +1,9 @@
 import { ethers } from "./ethers-5.6.esm.min.js";
 import { abi } from "/constants.js"; // ethereum
 
+const ETHEREUM_NETWORK = "0xaa36a7";
+const POLYGON_NETWORK = "0x13881";
+
 const connectButton = document.getElementById("connectButton");
 connectButton.onclick = connect;
 async function connect() {
@@ -28,10 +31,16 @@ export async function mint(tokenUri, preferedNetwork) {
   let contractAddress;
   const contractAddressEthereum = "0x0d3F6Baf4639da5120B777E728Fd9eC184C1550f";
   const contractAddressPolygon = "0xda46867287aDB1f7189a19845c498e87F1cca7F9";
-  if (preferedNetwork === "ethereum") {
+  if (preferedNetwork === ETHEREUM_NETWORK) {
     contractAddress = contractAddressEthereum;
+    if (connectedNetwork !== ETHEREUM_NETWORK) {
+      await promptSwitchNetwork(ETHEREUM_NETWORK);
+    }
     console.log(`minting ${tokenUri} to Ethereum: ${contractAddressEthereum}`);
-  } else if (preferedNetwork === "0x13881") {
+  } else if (preferedNetwork === POLYGON_NETWORK) {
+    if (connectedNetwork !== POLYGON_NETWORK) {
+      await promptSwitchNetwork(POLYGON_NETWORK);
+    }
     console.log(`minting ${tokenUri} to Polygon: ${contractAddressPolygon}`);
     contractAddress = contractAddressPolygon;
   }
@@ -67,7 +76,6 @@ export async function encodeImageToBase64(imageUrl) {
       };
       reader.readAsDataURL(data);
     });
-
     const metaData = '{"name":"Rock-Bear", "description":"Hell yeah!", ';
     const metaData2 =
       '"attributes": {"trait_type": "Purple", "value": "100"}, "image":"';

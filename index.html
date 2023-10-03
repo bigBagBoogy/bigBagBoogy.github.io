@@ -37,6 +37,8 @@
       const checkURIbutton = document.getElementById("checkURIbutton");
       const uriContainer = document.getElementById("uriContainer");
       const imageUrl = "/images/bearPink.svg";
+      const ETHEREUM_NETWORK = "0xaa36a7";
+      const POLYGON_NETWORK = "0x13881";
 
       checkURIbutton.addEventListener("click", async () => {
         const { metadata, imgUri } = await encodeImageToBase64(imageUrl);
@@ -45,7 +47,7 @@
       });
       // mint on Ethereum
       mintButton.addEventListener("click", async () => {
-        const preferedNetwork = "ethereum";
+        const preferedNetwork = ETHEREUM_NETWORK; 
         const { metadata, tokenUri, imgUri } = await encodeImageToBase64(
           imageUrl
         );
@@ -56,7 +58,7 @@
       });
       // mint on Polygon
       mintOnPolygonButton.addEventListener("click", async () => {
-        const preferedNetwork = "0x13881";  // = polygon
+        const preferedNetwork = POLYGON_NETWORK;  
         const { metadata, tokenUri, imgUri } = await encodeImageToBase64(
           imageUrl
         );

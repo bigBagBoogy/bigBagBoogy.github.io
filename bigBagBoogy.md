@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "amended code"
+git commit -m "added chainID detection code"
 git push -u origin main
 
 # todo:⭐️
