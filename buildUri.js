@@ -7,7 +7,6 @@ const POLYGON_NETWORK = "0x13881";
 const connectButton = document.getElementById("connectButton");
 connectButton.onclick = connect;
 async function connect() {
-  console.log("Button clicked");
   if (typeof window.ethereum !== "undefined") {
     try {
       await ethereum.request({ method: "eth_requestAccounts" });
