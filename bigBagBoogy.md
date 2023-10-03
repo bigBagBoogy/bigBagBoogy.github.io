@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "changed console.logs"
+git commit -m "added input fields for metadata"
 git push -u origin main
 
 # todo:⭐️

@@ -86,3 +86,44 @@ body {
   z-index: 6;
   box-shadow: 0 0 10px white;
 }
+
+
+/* Style for form labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+#nftForm {
+  width: 100%;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the form horizontally */
+  text-align: center; /* Center-align the form content */
+}
+
+/* Style for input fields */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+
+
+
+/* Optional: Style for form container header (if needed) */
+#nftForm h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Optional: Center align the form */
+#nftForm {
+  text-align: center;
+}
+
