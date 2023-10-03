@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "added chainID detection code"
+git commit -m "added network change prompt"
 git push -u origin main
 
 # todo:⭐️

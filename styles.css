@@ -31,7 +31,7 @@ body {
 }
 
 #checkURIbutton {
-  background-color: #ff0000ca;
+  background-color: #ffae00;
   color: white;
   font-weight: bold;
   font-size: 30px;
@@ -73,4 +73,16 @@ body {
 }
 .button-container button {
   margin: 20px 0; /* Add 20px margin on the top and bottom of each button */
+}
+.button {
+  background-color: #ffae00;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 6;
+  box-shadow: 0 0 10px white;
 }

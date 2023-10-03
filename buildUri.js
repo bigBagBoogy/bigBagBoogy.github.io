@@ -12,14 +12,19 @@ async function connect() {
     try {
       await ethereum.request({ method: "eth_requestAccounts" });
       //Metamask is connected, update the image source
-      document.getElementById("connectButton").src =
-        "images/metamaskConnected.svg";
+      document.getElementById("connectButton");
     } catch (error) {
       console.log(error);
     }
     connectButton.innerHTML = "Connected";
     const accounts = await ethereum.request({ method: "eth_accounts" });
     console.log(accounts);
+    const networkId = await detectConnectedNetwork();
+    if (networkId === ETHEREUM_NETWORK) {
+      console.log("Connected to Ethereum");
+    } else {
+      console.log("Connected to Polygon");
+    }
   } else {
     connectButton.innerHTML = "Please install MetaMask";
   }

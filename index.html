@@ -11,7 +11,7 @@
     <script src="buildUri.js" type="module"></script>
   </head>
   <body>
-    <button id="connectButton">Connect</button>
+    <button class="button" id="connectButton">Connect</button>
     
 
     
@@ -30,13 +30,14 @@
 
     <script type="module">
       import { mint, encodeImageToBase64, detectConnectedNetwork } from "./buildUri.js";
+      
       console.log(`connected network: ${await detectConnectedNetwork()}`);
 
       const mintButton = document.getElementById("mintButton");
       const mintOnPolygonButton = document.getElementById("mintOnPolygonButton");
       const checkURIbutton = document.getElementById("checkURIbutton");
       const uriContainer = document.getElementById("uriContainer");
-      const imageUrl = "/images/bearPink.svg";
+      const imageUrl = "/images/bearGreen.svg";
       const ETHEREUM_NETWORK = "0xaa36a7";
       const POLYGON_NETWORK = "0x13881";
 
