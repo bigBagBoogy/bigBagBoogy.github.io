@@ -12,7 +12,17 @@
   </head>
   <body>
     <button class="button" id="connectButton">Connect</button>
-    
+    <form id="nftForm">
+      <label for="name">NFT name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      <label for="description">description:</label>
+      <input type="text" id="description" name="description"><br><br>
+      <label for="traitType">traitType:</label>
+      <input type="text" id="traitType" name="traitType"><br><br>
+      <label for="traitValue">traitValue:</label>
+      <input type="text" id="traitValue" name="traitValue"><br><br>
+    </form>
+    <button id="checkURIbutton">Check URI</button>
 
     
     <h2>Your Token MetaData will look like this:</h2>
@@ -20,9 +30,7 @@
     <div id="uriContainer"></div>
     <img id="imageContainer" src="" alt="NFT Image" />
 
-    <div class="button-container">
-      <button id="checkURIbutton">Check URI</button>
-    </br>
+    <div class="button-container">   
       <button id="mintButton">Mint NFT on Ethereum</button>
       </br>
       <button id="mintOnPolygonButton">Mint NFT on Polygon</button>
@@ -30,6 +38,11 @@
 
     <script type="module">
       import { mint, encodeImageToBase64, detectConnectedNetwork } from "./buildUri.js";
+
+      const nameInput = document.getElementById("name");
+      const descriptionInput = document.getElementById("description");
+      const traitTypeInput = document.getElementById("traitType");
+      const traitValueInput = document.getElementById("traitValue");
 
       const mintButton = document.getElementById("mintButton");
       const mintOnPolygonButton = document.getElementById("mintOnPolygonButton");
@@ -40,7 +53,16 @@
       const POLYGON_NETWORK = "0x13881";
 
       checkURIbutton.addEventListener("click", async () => {
-        const { metadata, imgUri } = await encodeImageToBase64(imageUrl);
+        const name = nameInput.value;
+        const description = descriptionInput.value;
+        const traitType = traitTypeInput.value;
+        const traitValue = traitValueInput.value;
+        // Call encodeImageToBase64 with the input values
+        const { metadata, imgUri } = await encodeImageToBase64(imageUrl,
+  name,
+  description,
+  traitType,
+  traitValue);
         uriContainer.textContent = metadata;
         imageContainer.src = imgUri; // Set the src attribute to display the image
       });
@@ -48,7 +70,11 @@
       mintButton.addEventListener("click", async () => {
         const preferedNetwork = ETHEREUM_NETWORK; 
         const { metadata, tokenUri, imgUri } = await encodeImageToBase64(
-          imageUrl
+          imageUrl,
+  name,
+  description,
+  traitType,
+  traitValue
         );
         uriContainer.textContent = metadata;
         imageContainer.src = imgUri; // Set the src attribute to display the image
@@ -66,6 +92,7 @@
 
         await mint(tokenUri, preferedNetwork);
       });
+   
     </script>
   </body>
 </html>

@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "added network change prompt"
+git commit -m "changed console.logs"
 git push -u origin main
 
 # todo:⭐️

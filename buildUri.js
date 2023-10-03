@@ -68,7 +68,13 @@ export async function mint(tokenUri, preferedNetwork) {
   }
 }
 
-export async function encodeImageToBase64(imageUrl) {
+export async function encodeImageToBase64(
+  imageUrl,
+  name,
+  description,
+  traitType,
+  traitValue
+) {
   try {
     const response = await fetch(imageUrl);
     const data = await response.blob();
@@ -80,9 +86,8 @@ export async function encodeImageToBase64(imageUrl) {
       };
       reader.readAsDataURL(data);
     });
-    const metaData = '{"name":"Rock-Bear", "description":"Hell yeah!", ';
-    const metaData2 =
-      '"attributes": {"trait_type": "Purple", "value": "100"}, "image":"';
+    const metaData = `{"name":"${name}", "description":"${description}", `;
+    const metaData2 = `"attributes": {"trait_type": "${traitType}", "value": "${traitValue}"}, "image":"`;
     const imgUri = `data:image/svg+xml;base64,${base64Image.split(",")[1]}`;
     const closingTag = '"}';
 
