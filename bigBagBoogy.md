@@ -3,15 +3,15 @@
 git init
 git branch -M main
 git add .
-git commit -m "added input fields for metadata"
+git commit -m "added styling for input fields"
 git push -u origin main
 
 # todo:⭐️
 
-add logic for switching Metamask's connected network (ethereum/polygon)
+add logic for switching Metamask's connected network (ethereum/polygon) - [x]
 
-add user input fields to have a user create the Metadata.
-add user SVG submission
+add user input fields to have a user create the Metadata. - [x]
+add user SVG submission - [ ]
 
 - later: ASCII snapshot to NFT
 
