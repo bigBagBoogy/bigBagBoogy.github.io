@@ -70,7 +70,7 @@ export async function mint(tokenUri, preferedNetwork) {
 
 export async function encodeImageToBase64(
   imageUrl,
-  name,
+  nftName,
   description,
   traitType,
   traitValue
@@ -86,7 +86,7 @@ export async function encodeImageToBase64(
       };
       reader.readAsDataURL(data);
     });
-    const metaData = `{"name":"${name}", "description":"${description}", `;
+    const metaData = `{"name":"${nftName}", "description":"${description}", `;
     const metaData2 = `"attributes": {"trait_type": "${traitType}", "value": "${traitValue}"}, "image":"`;
     const imgUri = `data:image/svg+xml;base64,${base64Image.split(",")[1]}`;
     const closingTag = '"}';
