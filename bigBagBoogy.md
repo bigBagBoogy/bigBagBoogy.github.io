@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "Pulled out script from html"
+git commit -m "Added SVG user submit"
 git push -u origin main
 
 # todo:⭐️
