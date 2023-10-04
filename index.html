@@ -10,6 +10,7 @@
   </head>
   <body>
     <button class="button" id="connectButton">Connect</button>
+    <div class="form-container" id="form-container"></div>
     <form id="nftForm">
       <label for="name">NFT name:</label>
       <input type="text" id="name" name="name"><br><br>
@@ -19,19 +20,23 @@
       <input type="text" id="traitType" name="traitType"><br><br>
       <label for="traitValue">traitValue:</label>
       <input type="text" id="traitValue" name="traitValue"><br><br>
+      <label for="nftImage">Select SVG Image:</label>
+      <input type="file" id="nftImage" name="nftImage" accept=".svg" /><br /><br />
     </form>
     <button id="checkURIbutton">Check URI</button>
+    </div>
+    
     
     <h2>Your Token MetaData will look like this:</h2>
     <div id="uriContainer"></div>
     <img id="imageContainer" src="" alt="NFT Image" />
 
     <div class="button-container">   
-      <button id="mintButton">Mint NFT on Ethereum</button>
-      </br>
+      <button id="mintButton">Mint NFT on Ethereum</button>      
       <button id="mintOnPolygonButton">Mint NFT on Polygon</button>
     </div>
 
     <script src="nftForm.js" type="module"></script>
+  
   </body>
 </html>

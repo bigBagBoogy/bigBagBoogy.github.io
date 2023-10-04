@@ -31,8 +31,10 @@ body {
 }
 
 #checkURIbutton {
-  background-color: #ffae00;
-  color: white;
+  background-color: #ffae00;  
+  color: white; 
+  margin-left: 70%;
+  margin-top: -100%;
   font-weight: bold;
   font-size: 30px;
   padding: 20px 20px;
@@ -67,16 +69,17 @@ body {
     padding-left: 20px;
 
   }
-  .button-container {
+  .button-container {    
     margin-top: 1%; 
     text-align: center;
 }
 .button-container button {
-  margin: 20px 0; /* Add 20px margin on the top and bottom of each button */
+  margin: 20px 50px; /* Add 20px margin on the top and bottom of each button */
 }
 .button {
   background-color: #ffae00;
-  color: white;
+  color: white;  
+  margin-top: 2%;
   font-weight: bold;
   font-size: 30px;
   padding: 10px 10px;
@@ -95,7 +98,7 @@ label {
   margin-bottom: 6px;
 }
 
-#nftForm {
+#nftForm {  
   width: 100%;
   max-width: 400px; /* Adjust the maximum width as needed */
   margin: 0 auto; /* Center the form horizontally */
@@ -112,10 +115,6 @@ input[type="text"] {
   font-size: 16px;
 }
 
-
-
-
-
 /* Optional: Style for form container header (if needed) */
 #nftForm h2 {
   font-size: 24px;
@@ -125,5 +124,24 @@ input[type="text"] {
 /* Optional: Center align the form */
 #nftForm {
   text-align: center;
+}
+#nftImage {
+  background-color: #ffae00;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 6;
+  box-shadow: 0 0 10px white;
+}
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Form takes up 1 fraction of the available space, button is auto-sized */
+  align-items: center; /* Vertically center-align the form and button */
+  gap: 20px; /* Adjust the gap between form and button as needed */
 }
 
