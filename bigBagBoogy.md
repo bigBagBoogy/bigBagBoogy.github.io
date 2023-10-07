@@ -8,7 +8,7 @@ git push -u origin main
 
 # todo:⭐️
 
-18
+18 = tokenId 12? look into this
 
 add logic for switching Metamask's connected network (ethereum/polygon) - [x]
 
