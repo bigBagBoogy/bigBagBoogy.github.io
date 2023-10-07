@@ -3,10 +3,12 @@
 git init
 git branch -M main
 git add .
-git commit -m "Added tokenID logging in UI"
+git commit -m "Added tokenID alerting in UI"
 git push -u origin main
 
 # todo:⭐️
+
+18
 
 add logic for switching Metamask's connected network (ethereum/polygon) - [x]
 

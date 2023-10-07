@@ -63,25 +63,27 @@ export async function mint(tokenUri, preferedNetwork) {
       const transactionResponse = await tx.wait();
       console.log("Transaction Response:", transactionResponse);
       console.log("Transaction Hash:", transactionResponse.transactionHash);
-      alert(
-        "Transaction Hash: " +
-          transactionResponse.transactionHash +
-          "\n\nClick 'OK' to copy to clipboard."
-      );
 
-      navigator.clipboard
-        .writeText(transactionResponse.transactionHash)
-        .then(() => {
-          console.log("Transaction hash copied to clipboard");
-        })
-        .catch((error) => {
-          console.error("Failed to copy transaction hash to clipboard:", error);
-        });
       const events = transactionResponse.events;
       if (events && events.length > 0) {
-        const tokenId = events[0].args.tokenId;
+        const tokenIdHex = events[0].args.tokenId; // This is the tokenId in bigNumber hex
+        const tokenId = parseInt(tokenIdHex, 16);
         console.log("Token ID:", tokenId);
-        // You can use the tokenId here as needed
+        alert("Token ID: " + tokenId);
+
+        const copyButton = document.createElement("button");
+        copyButton.textContent = "Copy Token ID";
+        copyButton.addEventListener("click", () => {
+          navigator.clipboard
+            .writeText(tokenId)
+            .then(() => {
+              alert("Token ID copied to clipboard");
+            })
+            .catch((error) => {
+              console.error("Failed to copy Token ID to clipboard:", error);
+            });
+        });
+        document.body.appendChild(copyButton);
       }
     } catch (error) {
       console.error("Error minting NFT:", error);
