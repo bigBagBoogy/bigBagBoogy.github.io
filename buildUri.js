@@ -3,6 +3,7 @@ import { abi } from "/constants.js"; // ethereum
 
 const ETHEREUM_NETWORK = "0xaa36a7";
 const POLYGON_NETWORK = "0x13881";
+const gasLimit = 300000;
 
 const connectButton = document.getElementById("connectButton");
 connectButton.onclick = connect;
@@ -58,8 +59,30 @@ export async function mint(tokenUri, preferedNetwork) {
       const signer = provider.getSigner();
       const contractWithSigner = contract.connect(signer);
       const tx = await contractWithSigner.mintNFT(toAddress, tokenUri);
-      await tx.wait();
-      console.log("NFT minted successfully");
+      console.log("Transaction Object:", tx);
+      const transactionResponse = await tx.wait();
+      console.log("Transaction Response:", transactionResponse);
+      console.log("Transaction Hash:", transactionResponse.transactionHash);
+      alert(
+        "Transaction Hash: " +
+          transactionResponse.transactionHash +
+          "\n\nClick 'OK' to copy to clipboard."
+      );
+
+      navigator.clipboard
+        .writeText(transactionResponse.transactionHash)
+        .then(() => {
+          console.log("Transaction hash copied to clipboard");
+        })
+        .catch((error) => {
+          console.error("Failed to copy transaction hash to clipboard:", error);
+        });
+      const events = transactionResponse.events;
+      if (events && events.length > 0) {
+        const tokenId = events[0].args.tokenId;
+        console.log("Token ID:", tokenId);
+        // You can use the tokenId here as needed
+      }
     } catch (error) {
       console.error("Error minting NFT:", error);
     }
@@ -69,16 +92,17 @@ export async function mint(tokenUri, preferedNetwork) {
 }
 
 export async function encodeImageToBase64(
-  imageUrl,
+  clientImageUrl,
   nftName,
   description,
   traitType,
   traitValue
 ) {
   try {
-    const response = await fetch(imageUrl);
+    console.log(clientImageUrl);
+    const response = await fetch(clientImageUrl);
     const data = await response.blob();
-
+    console.log(data);
     const base64Image = await new Promise((resolve) => {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -95,7 +119,7 @@ export async function encodeImageToBase64(
     // Base64 encode the entire metadata string
     const encodedMetadata = btoa(metadataString);
     const jsonTokenUri = `data:application/json;base64,${encodedMetadata}`;
-    console.log(jsonTokenUri);
+    // console.log(jsonTokenUri);
 
     return {
       metadata: metadataString,
