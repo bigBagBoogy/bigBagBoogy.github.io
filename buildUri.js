@@ -67,9 +67,9 @@ export async function mint(tokenUri, preferedNetwork) {
       const events = transactionResponse.events;
       if (events && events.length > 0) {
         const tokenIdHex = events[0].args.tokenId; // This is the tokenId in bigNumber hex
-        const tokenId = parseInt(tokenIdHex, 16);
-        console.log("Token ID:", tokenId);
-        alert("Token ID: " + tokenId);
+        const tokenId = BigInt(tokenIdHex); // Use BigInt to maintain precision
+        console.log("Token ID:", tokenId.toString());
+        alert("Token ID: " + tokenId.toString());
 
         const copyButton = document.createElement("button");
         copyButton.textContent = "Copy Token ID";
