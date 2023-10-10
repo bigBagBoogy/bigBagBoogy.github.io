@@ -10,7 +10,9 @@
   </head>
   <body>
     <button class="button" id="connectButton">Connect</button>
-    <div class="grid-container" id="grid-container"></div>
+    <div class="grid-container" id="grid-container">
+    <img id="imageContainer" src="" alt="" />
+
     <form id="nftForm">
       <label for="name">NFT name:</label>
       <input type="text" id="name" name="name"><br><br>
@@ -21,15 +23,14 @@
       <label for="traitValue">traitValue:</label>
       <input type="text" id="traitValue" name="traitValue"><br><br>
       <label for="nftImage">Select SVG Image:</label>
-      <input type="file" id="nftImage" name="nftImage" accept=".svg" /><br /><br />
+      <input type="file" id="nftImageButton" name="nftImageButton" accept=".svg" /><br /><br />
     </form>
     <button id="checkURIbutton">Check URI</button>
     </div>
+  </div>
     
     
-    <h2>Your Token MetaData will look like this:</h2>
-    <div id="uriContainer"></div>
-    <img id="imageContainer" src="" alt="NFT Image" />
+    <div id="uriContainer"><h2>Your Token MetaData will look like this</h2></div>
     
 
     <div class="button-container">   

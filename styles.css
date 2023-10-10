@@ -30,40 +30,18 @@ body {
     box-shadow: 0 0 15px white; 
 }
 
-#checkURIbutton {
-  background-color: #ffae00;  
-  color: white; 
-  margin-left: 70%;
-  margin-top: -100%;
-  font-weight: bold;
-  font-size: 30px;
-  padding: 20px 20px;
-  border: none;
+#imageContainer {
+  max-width: 90%;
+  margin: 10% 10% 20% 10%; /* top, right, bottom, left */
+  background-color: #2a2b2b;
   border-radius: 10px;
-  cursor: pointer;
-  z-index: 6;
-  box-shadow: 0 0 10px white; /* Add this line */
 }
 
-
-
-#uriContainer {
-    font-weight: bold;
-    font-size: 25px;
-    border: 3px solid #ffffff;
-    padding: 50px;
-    margin-top: 20px;
-    white-space: pre-wrap;
-    overflow-x: auto; /* Add a horizontal scrollbar when necessary */
-    max-width: 100%; /* Limit the container's width to the viewport */
-  }
-  #imageContainer {
-    max-width: 25%;
-    display: none;
-  }
- 
-  
-  
+#imageContainer img {
+  max-width: 10%;
+  height: auto;
+  border-radius: 10px;
+}
   h3 {
     margin-top: 100px;
     padding-top: 20px; /* Adjust this value as needed */
@@ -91,6 +69,7 @@ body {
   z-index: 6;
   box-shadow: 0 0 10px white;
 }
+
 
 
 /* Style for form labels */
@@ -127,7 +106,7 @@ input[type="text"] {
 #nftForm {
   text-align: center;
 }
-#nftImage {
+#nftImageButton {
   background-color: #ffae00;
   width: 100%;
   color: white;
@@ -140,22 +119,51 @@ input[type="text"] {
   z-index: 6;
   box-shadow: 0 0 10px white;
 }
-.form-container {
+#grid-container {
   display: grid;
-  grid-template-columns: 1fr auto; /* Form takes up 1 fraction of the available space, button is auto-sized */
-  align-items: center; /* Vertically center-align the form and button */
-  gap: 20px; /* Adjust the gap between form and button as needed */
-}
-#my-button {
-  background-color: blue;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  grid-template-columns: 30% 40% 30%;
+    /* grid-template-rows: 80px 200px; */
+  gap: 10px;
+  background-color: #3b3a3c;
+  padding: 10px;
 }
 
-#my-button:hover {
-  background-color: darkblue;
+#grid-container > div {
+  text-align: center;
+  font-size: 30px;
 }
 
+#grid-container > button {
+  width: 50%;
+  height: 15%;
+  background-color: #ffae00;      
+  color: white;    
+  font-weight: bold;
+  font-size: 30px;    
+  border-radius: 10px;     
+  box-shadow: 0 0 10px white;
+  justify-self: start; /* Align horizontally to the start of the column */
+position: relative; /* Set the vertical position*/
+top: 60%; 
+}
+
+#uriContainer {
+
+  width: 85%;
+  font-weight: bold;
+    font-size: 25px;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    padding: 50px;
+    margin: 0 auto;
+    margin-top: 20px;
+    white-space: pre-wrap;
+    overflow-x: auto; /* Add a horizontal scrollbar when necessary */
+    max-width: 100%; /* Limit the container's width to the viewport */
+}
+
+#uriContainer h2 {
+  text-align: center;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value (0.5 in this example) */
+}

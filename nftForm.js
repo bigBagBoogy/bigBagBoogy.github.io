@@ -4,7 +4,7 @@ const nameInput = document.getElementById("name");
 const descriptionInput = document.getElementById("description");
 const traitTypeInput = document.getElementById("traitType");
 const traitValueInput = document.getElementById("traitValue");
-const nftImageInput = document.getElementById("nftImage");
+const nftImageInput = document.getElementById("nftImageButton");
 
 const mintButton = document.getElementById("mintButton");
 const mintOnPolygonButton = document.getElementById("mintOnPolygonButton");
@@ -48,6 +48,7 @@ checkURIbutton.addEventListener("click", async () => {
     imageContainer.src = imgUri; // Set the src attribute to display the image
     imageContainer.style.display = "block";
   };
+
   reader.readAsDataURL(nftImageFile);
 });
 
