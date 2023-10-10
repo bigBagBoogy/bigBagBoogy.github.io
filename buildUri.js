@@ -36,6 +36,8 @@ export async function mint(tokenUri, preferedNetwork) {
   let contractAddress;
   const contractAddressEthereum = "0x0d3F6Baf4639da5120B777E728Fd9eC184C1550f";
   const contractAddressPolygon = "0xda46867287aDB1f7189a19845c498e87F1cca7F9";
+  const accounts = await ethereum.request({ method: "eth_accounts" });
+  const userAddress = accounts[0]; // Get the user's address
   if (preferedNetwork === ETHEREUM_NETWORK) {
     contractAddress = contractAddressEthereum;
     if (connectedNetwork !== ETHEREUM_NETWORK) {
@@ -54,12 +56,10 @@ export async function mint(tokenUri, preferedNetwork) {
     const contract = new ethers.Contract(contractAddress, abi, provider);
 
     try {
-      const toAddress = "0xEC5DBFed2e8A5E88De2AC7a9E5884B0bD4F6Ca7f";
-      console.log(`minting ${tokenUri} to: ${toAddress}`);
       const signer = provider.getSigner();
       const contractWithSigner = contract.connect(signer);
-      const tx = await contractWithSigner.mintNFT(toAddress, tokenUri);
-      console.log("Transaction Object:", tx);
+      const tx = await contractWithSigner.mintNFT(userAddress, tokenUri);
+      console.log("NFT will go to:", userAddress);
       const transactionResponse = await tx.wait();
       console.log("Transaction Response:", transactionResponse);
       console.log("Transaction Hash:", transactionResponse.transactionHash);
@@ -68,17 +68,28 @@ export async function mint(tokenUri, preferedNetwork) {
       if (events && events.length > 0) {
         const tokenIdHex = events[0].args.tokenId; // This is the tokenId in bigNumber hex
         const tokenId = BigInt(tokenIdHex); // Use BigInt to maintain precision
-        console.log("Token ID:", tokenId.toString());
-        alert("Token ID: " + tokenId.toString());
+        console.log(
+          "Token ID:",
+          tokenId.toString(),
+          "Contract Address:",
+          contractAddress
+        );
+        alert(
+          "Token ID: " +
+            tokenId.toString() +
+            "\nContract Address: " +
+            contractAddress
+        );
 
         const copyButton = document.createElement("button");
-        button.id = "copyButton";
+        copyButton.id = "copyButton";
         copyButton.textContent = "Copy Token ID";
         copyButton.addEventListener("click", () => {
+          const textToCopy = tokenId + " " + contractAddress;
           navigator.clipboard
-            .writeText(tokenId)
+            .writeText(textToCopy)
             .then(() => {
-              alert("Token ID copied to clipboard");
+              alert("Token ID and Contract Address copied to clipboard");
             })
             .catch((error) => {
               console.error("Failed to copy Token ID to clipboard:", error);

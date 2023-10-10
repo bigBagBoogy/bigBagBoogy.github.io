@@ -14,6 +14,9 @@ add user input fields to have a user create the Metadata. - [x]
 
 add user SVG submission - [x]
 
+get new mint contracts for both polygon and ehtereum with higher gas limits
+and without the "is Ownable"
+
 add logging event and user copy contract address + tokenID for ethereum
 
 const toAddress = "0xEC5DBFed2e8A5E88De2AC7a9E5884B0bD4F6Ca7f"; should be changed to:
