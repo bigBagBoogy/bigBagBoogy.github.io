@@ -3,7 +3,7 @@ import { abi } from "/constants.js"; // ethereum
 
 const ETHEREUM_NETWORK = "0xaa36a7";
 const POLYGON_NETWORK = "0x13881";
-const gasLimit = 300000;
+// const gasLimit = 300000;
 
 const connectButton = document.getElementById("connectButton");
 connectButton.onclick = connect;
@@ -72,6 +72,7 @@ export async function mint(tokenUri, preferedNetwork) {
         alert("Token ID: " + tokenId.toString());
 
         const copyButton = document.createElement("button");
+        button.id = "copyButton";
         copyButton.textContent = "Copy Token ID";
         copyButton.addEventListener("click", () => {
           navigator.clipboard

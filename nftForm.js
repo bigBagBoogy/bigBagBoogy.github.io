@@ -46,6 +46,7 @@ checkURIbutton.addEventListener("click", async () => {
     );
     uriContainer.textContent = metadata;
     imageContainer.src = imgUri; // Set the src attribute to display the image
+    imageContainer.style.display = "block";
   };
   reader.readAsDataURL(nftImageFile);
 });
@@ -82,6 +83,7 @@ mintButton.addEventListener("click", async () => {
     );
     uriContainer.textContent = metadata;
     imageContainer.src = imgUri; // Set the src attribute to display the image
+    imageContainer.style.display = "block";
     await mint(tokenUri, preferedNetwork);
   };
 
@@ -119,6 +121,7 @@ mintOnPolygonButton.addEventListener("click", async () => {
     );
     uriContainer.textContent = metadata;
     imageContainer.src = imgUri; // Set the src attribute to display the image
+    imageContainer.style.display = "block";
 
     await mint(tokenUri, preferedNetwork);
   };
