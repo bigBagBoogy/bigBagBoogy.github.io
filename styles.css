@@ -3,52 +3,18 @@ body {
   color: white;
 }
 
-
-#mintButton {    
-    background-color: #2f0051ca;
-    color: white;
-    font-weight: bold;
-    font-size: 30px;    
-    padding: 20px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    z-index: 6;
-    box-shadow: 0 0 15px white; 
-}
-#mintOnPolygonButton{    
-    background-color: #2f0051ca;
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
-    stroke: black;
-    padding: 20px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    z-index: 6;
-    box-shadow: 0 0 15px white; 
-}
-
 #imageContainer {
-  max-width: 90%;
-  margin: 10% 10% 20% 10%; /* top, right, bottom, left */
+  height: 400px;
+  max-width: 100%;
+  margin: 8% 10% 2% 10%; /* top, right, bottom, left */
   background-color: #2a2b2b;
   border-radius: 10px;
+  align-self: start; /* Align vertically to the start of the row */
 }
 
 #imageContainer img {
-  max-width: 10%;
-  height: auto;
-  border-radius: 10px;
+  max-width: 100%;
 }
-  h3 {
-    margin-top: 100px;
-    padding-top: 20px; /* Adjust this value as needed */
-    color: white;
-    padding-left: 20px;
-
-  }
   .button-container {    
     margin-top: 1%; 
     text-align: center;
@@ -119,43 +85,55 @@ input[type="text"] {
   z-index: 6;
   box-shadow: 0 0 10px white;
 }
+
+
 #grid-container {
   display: grid;
   grid-template-columns: 30% 40% 30%;
     /* grid-template-rows: 80px 200px; */
   gap: 10px;
   background-color: #3b3a3c;
+  justify-content: center; /* Center horizontally */
   padding: 10px;
+}
+ /* Media query for smaller screens */
+ @media (max-width: 1000px) {
+  #grid-container {
+    grid-template-columns: auto;
+    text-align: center;
+  }
 }
 
 #grid-container > div {
   text-align: center;
   font-size: 30px;
 }
-
-#grid-container > button {
+/*checkURIbutton*/
+#grid-container > button {   /*checkURIbutton*/
+  max-width: 400px;     /*checkURIbutton*/
   width: 50%;
-  height: 15%;
+  height: 80px;
   background-color: #ffae00;      
   color: white;    
   font-weight: bold;
   font-size: 30px;    
   border-radius: 10px;     
   box-shadow: 0 0 10px white;
-  justify-self: start; /* Align horizontally to the start of the column */
+  justify-self: center; /* Align horizontally to the start of the column */
 position: relative; /* Set the vertical position*/
 top: 60%; 
 }
+
 
 #uriContainer {
 
   width: 85%;
   font-weight: bold;
     font-size: 25px;
-    border: 3px solid #ffffff;
+    border: 4px solid #ffae00;
     border-radius: 10px;
     padding: 50px;
-    margin: 0 auto;
+    margin: auto;
     margin-top: 20px;
     white-space: pre-wrap;
     overflow-x: auto; /* Add a horizontal scrollbar when necessary */
@@ -166,4 +144,16 @@ top: 60%;
   text-align: center;
   font-size: 30px;
   color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value (0.5 in this example) */
+}
+.mintButton {    
+  background-color: #2f0051ca;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;    
+  padding: 20px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 6;
+  box-shadow: 0 0 15px white; 
 }

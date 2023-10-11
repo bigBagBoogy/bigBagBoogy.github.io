@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "hid imgContainer"
+git commit -m "New contracts without onlyOwner"
 git push -u origin main
 
 # todo:⭐️
@@ -14,7 +14,7 @@ add user input fields to have a user create the Metadata. - [x]
 
 add user SVG submission - [x]
 
-get new mint contracts for both polygon and ehtereum without the "is Ownable"
+get new mint contracts for both polygon and ehtereum without the "is Ownable" - [x]
 
 add logging event and user copy contract address + tokenID for ethereum
 
