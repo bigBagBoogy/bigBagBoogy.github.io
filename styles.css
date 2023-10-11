@@ -104,10 +104,6 @@ input[type="text"] {
   }
 }
 
-#grid-container > div {
-  text-align: center;
-  font-size: 30px;
-}
 /*checkURIbutton*/
 #grid-container > button {   /*checkURIbutton*/
   max-width: 400px;     /*checkURIbutton*/
@@ -121,7 +117,7 @@ input[type="text"] {
   box-shadow: 0 0 10px white;
   justify-self: center; /* Align horizontally to the start of the column */
 position: relative; /* Set the vertical position*/
-top: 60%; 
+ 
 }
 
 
