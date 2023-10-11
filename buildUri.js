@@ -58,7 +58,7 @@ export async function mint(tokenUri, preferedNetwork) {
     try {
       const signer = provider.getSigner();
       const contractWithSigner = contract.connect(signer);
-      const tx = await contractWithSigner.mintNFT(userAddress, tokenUri);
+      const tx = await contractWithSigner.mintNFT(userAddress, tokenUri); // without setting the gasLimit
       console.log("NFT will go to:", userAddress);
       const transactionResponse = await tx.wait();
       console.log("Transaction Response:", transactionResponse);

@@ -26,11 +26,13 @@ const toAddress = address(Signer); or address[Signer];?
 
 inpage.js:1 MetaMask - RPC Error: gas required exceeds allowance (30000000) {code: -32000, message: 'gas required exceeds allowance (30000000)'}
 
-Replace poly and eth contracts and ABI's to accept gas limit parameter if you want to be able to mint bigger NFT's: include below:
-const gasLimit = **a very large amount**; // Set a higher gas limit
-const transactionResponse = await contract.mintNFT(to, tokenURI, { gasLimit });
+      ```const tx = await contractWithSigner.mintNFT(userAddress, tokenUri, {
+        gasLimit: 50000000,
+      }); // Set the gasLimit (size: 36kb > 30000000 gas)```
 
-function mintNFT(address to, string memory tokenURI, uint256 gasLimit) external
+The above approach won't work, because the blocksize is exceeded for these bigger NFT's.
+
+--> MetaMask - RPC Error: [ethjs-query] while formatting outputs from RPC '{"value":{"code":-32000,"message":"exceeds block gas limit"}}'
 
 - later: ASCII snapshot to NFT
 
