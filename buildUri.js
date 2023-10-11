@@ -34,8 +34,8 @@ export async function mint(tokenUri, preferedNetwork) {
   const connectedNetwork = await detectConnectedNetwork(); // this will return chainId
   console.log(`connected network: ${connectedNetwork}`);
   let contractAddress;
-  const contractAddressEthereum = "0x0d3F6Baf4639da5120B777E728Fd9eC184C1550f";
-  const contractAddressPolygon = "0xda46867287aDB1f7189a19845c498e87F1cca7F9";
+  const contractAddressEthereum = "0xe30D6bB8993177Be246F3832E8A6aBd113256F25";
+  const contractAddressPolygon = "0x4f7A244A8Fd94935389cDFc528dE599850d4605c";
   const accounts = await ethereum.request({ method: "eth_accounts" });
   const userAddress = accounts[0]; // Get the user's address
   if (preferedNetwork === ETHEREUM_NETWORK) {

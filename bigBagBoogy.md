@@ -14,8 +14,7 @@ add user input fields to have a user create the Metadata. - [x]
 
 add user SVG submission - [x]
 
-get new mint contracts for both polygon and ehtereum with higher gas limits
-and without the "is Ownable"
+get new mint contracts for both polygon and ehtereum without the "is Ownable"
 
 add logging event and user copy contract address + tokenID for ethereum
 
@@ -23,6 +22,8 @@ const toAddress = "0xEC5DBFed2e8A5E88De2AC7a9E5884B0bD4F6Ca7f"; should be change
 const toAddress = address(Signer); or address[Signer];?
 
 # issue:
+
+The switching of networks (polygon <--> ethereum) does not work properly if the user has not yet added the Polygon network!!!
 
 inpage.js:1 MetaMask - RPC Error: gas required exceeds allowance (30000000) {code: -32000, message: 'gas required exceeds allowance (30000000)'}
 
@@ -38,15 +39,6 @@ The above approach won't work, because the blocksize is exceeded for these bigge
 
 # let's:
 
-look into creating ECMAScript modules. 🧩
+Token ID: 0 contractAddress: 0xe30D6bB8993177Be246F3832E8A6aBd113256F25 🧩
 
 # end of todo..........................................
-
-if (clientImageUrl == null) {
-// Handle the case where no file is selected
-alert("No image file selected");
-// or for development purposes, pass in a different image url here:
-// clientImageUrl = imageUrl;
-// console.error("No image file selected");
-return;
-}
