@@ -156,9 +156,8 @@ position: relative; /* Set the vertical position*/
 }
 
 
-#uriContainer {
-
-  width: 85%;
+#uriContainer {  
+  width: 500;
   font-weight: bold;
     font-size: 25px;
     border: 4px solid #ffae00;
@@ -168,8 +167,7 @@ position: relative; /* Set the vertical position*/
     margin-top: 20px;
     white-space: pre-wrap;
     overflow-x: auto; /* Add a horizontal scrollbar when necessary */
-    max-width: 100%; /* Limit the container's width to the viewport */
-}
+    }
 
 #uriContainer h2 {
   text-align: center;

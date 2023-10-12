@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "Added this app to github 'websites'"
+git commit -m "fixed uriContainer too big"
 git push -u origin main
 
 # todo:⭐️
@@ -31,9 +31,9 @@ The switching of networks (polygon <--> ethereum) does not work properly if the 
 
 inpage.js:1 MetaMask - RPC Error: gas required exceeds allowance (30000000) {code: -32000, message: 'gas required exceeds allowance (30000000)'}
 
-      ```const tx = await contractWithSigner.mintNFT(userAddress, tokenUri, {
+     const tx = await contractWithSigner.mintNFT(userAddress, tokenUri, {
         gasLimit: 50000000,
-      }); // Set the gasLimit (size: 36kb > 30000000 gas)```
+      }); // Set the gasLimit (size: 36kb > 30000000 gas)
 
 The above approach won't work, because the blocksize is exceeded for these bigger NFT's.
 
@@ -49,5 +49,7 @@ Token ID: 0 contractAddress: 0xe30D6bB8993177Be246F3832E8A6aBd113256F25 🧩
 
 origin https://github.com/bigBagBoogy/bigBagBoogy.github.io.git (fetch)
 origin https://github.com/bigBagBoogy/bigBagBoogy.github.io.git (push)
-https://github.com/bigBagBoogy/bigBagBoogy.github.io.git
-bigBagBoogy.github.io
+
+# link to website:
+
+https://bigBagBoogy.github.io
