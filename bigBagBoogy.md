@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "Added heading container"
+git commit -m "Added this app to github 'websites'"
 git push -u origin main
 
 # todo:⭐️
@@ -46,3 +46,8 @@ The above approach won't work, because the blocksize is exceeded for these bigge
 Token ID: 0 contractAddress: 0xe30D6bB8993177Be246F3832E8A6aBd113256F25 🧩
 
 # end of todo..........................................
+
+origin https://github.com/bigBagBoogy/bigBagBoogy.github.io.git (fetch)
+origin https://github.com/bigBagBoogy/bigBagBoogy.github.io.git (push)
+https://github.com/bigBagBoogy/bigBagBoogy.github.io.git
+bigBagBoogy.github.io
