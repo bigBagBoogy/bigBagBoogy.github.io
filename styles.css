@@ -2,6 +2,28 @@ body {
   background-color: rgb(50, 49, 51);
   color: white;
 }
+.header-container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 20% 80%;
+    /* grid-template-rows: 80px 200px; */
+  /* background-color: rgb(37, 27, 46); */
+  justify-content: center; /* Center horizontally */
+  padding: 10px;
+}
+ /* Media query for smaller screens */
+ @media (max-width: 1000px) {
+  .header-container {
+    grid-template-columns: auto;
+    text-align: center;
+  }
+}
+#header {
+  text-align: right;
+  margin-right: 5%;
+
+}
+
 
 #imageContainer {
   height: 400px;
@@ -24,7 +46,7 @@ body {
 }
 #connectButton {
   /* Default styles */
-  background-color: #ff0000;
+  background-color: #ff8f67;
   color: white;
   margin-top: 2%;
   font-weight: bold;
@@ -41,11 +63,11 @@ body {
 }
 
 #connectButton:hover {
-  background-color: #ff8f67; /* Change the background color on hover */
+  background-color: #ffbda5; /* Change the background color on hover */
 }
 
 #connectButton:active {
-  background-color: #ff6600; /* Change the background color when the button is clicked */
+  background-color: #3f14ff; /* Change the background color when the button is clicked */
 }
 
 
@@ -105,7 +127,7 @@ input[type="text"] {
   grid-template-columns: 30% 40% 30%;
     /* grid-template-rows: 80px 200px; */
   gap: 10px;
-  background-color: #3b3a3c;
+  background-color: rgb(50, 49, 51);
   justify-content: center; /* Center horizontally */
   padding: 10px;
 }

@@ -17,7 +17,7 @@ async function connect() {
       console.log(error);
     }
     connectButton.innerHTML = "Connected";
-    connectButton.style.backgroundColor = "green";
+    connectButton.style.backgroundColor = "#00B67A";
     connectButton.style.padding = "10px 45px";
     const accounts = await ethereum.request({ method: "eth_accounts" });
     console.log(accounts);

@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "New contracts without onlyOwner"
+git commit -m "Added heading container"
 git push -u origin main
 
 # todo:⭐️
@@ -19,7 +19,11 @@ get new mint contracts for both polygon and ehtereum without the "is Ownable" - 
 add logging event and user copy contract address + tokenID for ethereum
 
 const toAddress = "0xEC5DBFed2e8A5E88De2AC7a9E5884B0bD4F6Ca7f"; should be changed to:
-const toAddress = address(Signer); or address[Signer];?
+const toAddress = address(Signer); or address[Signer];? - [x]
+
+add ASCII application. extra page or pop-up?
+max size of image to convert?
+png AND jpg?
 
 # issue:
 
