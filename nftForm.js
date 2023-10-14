@@ -53,7 +53,6 @@ nftImageInput.addEventListener("change", function () {
 
     reader.onload = function (e) {
       const imageContainer = document.getElementById("imageContainer");
-      imageContainer.src = e.target.result;
 
       // Get the file type
       const selectedFile = nftImageInput.files[0];
@@ -63,7 +62,14 @@ nftImageInput.addEventListener("change", function () {
       // Get the file size in kilobytes
       const fileSize = selectedFile.size;
       const fileSizeKB = fileSize / 1024;
-      console.log("File size: " + fileSizeKB + " KB");
+      console.log("File size: " + fileSizeKB + " KB" + fileSize + " bytes");
+      if (fileSize > 20000) {
+        alert(
+          "File size exceeds the limit of 20 kb. Please select a smaller file."
+        );
+      } else {
+        imageContainer.src = e.target.result;
+      }
     };
 
     // Read the selected file as a data URL

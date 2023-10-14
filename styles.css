@@ -57,7 +57,7 @@ background-color: #ffbda5; /* Change the background color on hover */
 background-color: #3f14ff; /* Change the background color when the button is clicked */
 }
 #imageContainer {
-  height: 400px;
+  height: 300px;
   max-width: 75%;
   margin: 8% 10% 2% 10%; /* top, right, bottom, left */
   background-color: #2a2b2b;
@@ -72,7 +72,7 @@ background-color: #3f14ff; /* Change the background color when the button is cli
 
 #grid-container {
   display: grid;
-  grid-template-columns: 40% 45%;
+  grid-template-columns: 40% 40%;
     /* grid-template-rows: 80px 200px; */
   gap: 100px;
   background-color: rgb(50, 49, 51);
