@@ -79,7 +79,7 @@ background-color: #3f14ff; /* Change the background color when the button is cli
   padding: 10px;
 }
  /* Media query for smaller screens */
- @media (max-width: 1000px) {
+ @media (max-width: 600px) {
   #grid-container {
     grid-template-columns: auto;
     text-align: center;
@@ -111,7 +111,7 @@ label {
 
 #nftForm {  
   width: 100%;
-  max-width: 500px; /* Adjust the maximum width as needed */ 
+  max-width: 350px; /* Adjust the maximum width as needed */ 
 }
 
 /* Style for input fields */
@@ -125,7 +125,7 @@ input[type="text"] {
 }
 
 #nftForm input[type="text"] {
-  width: 450px; /* Adjust the width as needed */  
+  width: 100%; /* Adjust the width as needed */  
 }
 
 #nftImageButton {
@@ -140,7 +140,7 @@ input[type="text"] {
   cursor: pointer;
   z-index: 6;
   box-shadow: 0 0 10px white;
-  width: 450px;
+  width: 350px;
 }
 
 #uriContainer {  
