@@ -1,6 +1,7 @@
 body {
   background-color: rgb(50, 49, 51);
   color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .header-container {
   text-align: center;
@@ -73,18 +74,15 @@ body {
 
 
 
-/* Style for form labels */
+/* Style for form labels (text ABOVE the labels) */
 label {
-  display: block;
   font-weight: bold;
-  margin-bottom: 6px;
+  margin-bottom: 80px;
 }
 
 #nftForm {  
   width: 100%;
   max-width: 400px; /* Adjust the maximum width as needed */
-  margin: 0 auto; /* Center the form horizontally */
-  text-align: center; /* Center-align the form content */
 }
 
 /* Style for input fields */
@@ -97,16 +95,6 @@ input[type="text"] {
   font-size: 16px;
 }
 
-/* Optional: Style for form container header (if needed) */
-#nftForm h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* Optional: Center align the form */
-#nftForm {
-  text-align: center;
-}
 #nftImageButton {
   background-color: #ffae00;
   width: 100%;

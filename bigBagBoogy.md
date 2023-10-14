@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "fixed uriContainer too big"
+git commit -m "amended CSS"
 git push -u origin main
 
 # todo:⭐️
