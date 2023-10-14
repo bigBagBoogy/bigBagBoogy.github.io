@@ -22,93 +22,39 @@ body {
 #header {
   text-align: right;
   margin-right: 5%;
-
 }
-
-
-#imageContainer {
-  height: 400px;
-  max-width: 100%;
-  margin: 8% 10% 2% 10%; /* top, right, bottom, left */
-  background-color: #2a2b2b;
-  border-radius: 10px;
-  align-self: start; /* Align vertically to the start of the row */
-}
-
-#imageContainer img {
-  max-width: 100%;
-}
-  .button-container {    
-    margin-top: 1%; 
-    text-align: center;
+.button-container {    
+  margin-top: 1%; 
+  text-align: center;
 }
 .button-container button {
-  margin: 20px 50px; /* Add 20px margin on the top and bottom of each button */
+margin: 20px 50px; /* Add 20px margin on the top and bottom of each button */
 }
 #connectButton {
-  /* Default styles */
-  background-color: #ff8f67;
-  color: white;
-  margin-top: 2%;
-  font-weight: bold;
-  font-size: 20px;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  z-index: 6;
-  box-shadow: 0 0 10px white;
+/* Default styles */
+background-color: #ff8f67;
+color: white;
+margin-top: 2%;
+font-weight: bold;
+font-size: 20px;
+padding: 10px 10px;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+z-index: 6;
+box-shadow: 0 0 10px white;
 
-  /* Change background color on hover */
-  transition: background-color 0.3s; /* Add a smooth transition effect */
+/* Change background color on hover */
+transition: background-color 0.3s; /* Add a smooth transition effect */
 }
 
 #connectButton:hover {
-  background-color: #ffbda5; /* Change the background color on hover */
+background-color: #ffbda5; /* Change the background color on hover */
 }
 
 #connectButton:active {
-  background-color: #3f14ff; /* Change the background color when the button is clicked */
+background-color: #3f14ff; /* Change the background color when the button is clicked */
 }
-
-
-
-
-/* Style for form labels (text ABOVE the labels) */
-label {
-  font-weight: bold;
-  margin-bottom: 80px;
-}
-
-#nftForm {  
-  width: 100%;
-  max-width: 400px; /* Adjust the maximum width as needed */
-}
-
-/* Style for input fields */
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-#nftImageButton {
-  background-color: #ffae00;
-  width: 100%;
-  color: white;
-  font-weight: bold;
-  font-size: 30px;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  z-index: 6;
-  box-shadow: 0 0 10px white;
-}
-
 
 #grid-container {
   display: grid;
@@ -142,6 +88,58 @@ input[type="text"] {
 position: relative; /* Set the vertical position*/
  
 }
+#imageContainer {
+  height: 400px;
+  max-width: 100%;
+  margin: 8% 10% 2% 10%; /* top, right, bottom, left */
+  background-color: #2a2b2b;
+  border-radius: 10px;
+  align-self: start; /* Align vertically to the start of the row */
+  margin: auto;
+}
+
+#imageContainer img {
+  max-width: 100%;
+  
+}
+
+/* Style for form labels (text ABOVE the labels) */
+label {
+  font-weight: bold;
+  margin-bottom: 80px;
+}
+
+#nftForm {  
+  width: 100%;
+  max-width: 400px; /* Adjust the maximum width as needed */ 
+}
+
+/* Style for input fields */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#nftImageButton {
+  background-color: #ffae00;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 6;
+  box-shadow: 0 0 10px white;
+}
+
+
+
 
 
 #uriContainer {  
@@ -157,7 +155,7 @@ position: relative; /* Set the vertical position*/
     overflow-x: auto; /* Add a horizontal scrollbar when necessary */
     }
 
-#uriContainer h2 {
+#uriContainer h2 {  /* this is the placeholder text */
   text-align: center;
   font-size: 30px;
   color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value (0.5 in this example) */
