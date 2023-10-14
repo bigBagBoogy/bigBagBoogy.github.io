@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "aligned form input"
+git commit -m "removed unnecessary check URI button"
 git push -u origin main
 
 # todo:⭐️

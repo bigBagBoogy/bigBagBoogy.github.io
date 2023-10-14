@@ -3,6 +3,7 @@ body {
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .header-container {
   text-align: center;
   display: grid;
@@ -57,7 +58,7 @@ background-color: #3f14ff; /* Change the background color when the button is cli
 }
 #imageContainer {
   height: 400px;
-  max-width: 100%;
+  max-width: 75%;
   margin: 8% 10% 2% 10%; /* top, right, bottom, left */
   background-color: #2a2b2b;
   border-radius: 10px;
@@ -71,9 +72,9 @@ background-color: #3f14ff; /* Change the background color when the button is cli
 
 #grid-container {
   display: grid;
-  grid-template-columns: 30% 45% 25%;
+  grid-template-columns: 40% 45%;
     /* grid-template-rows: 80px 200px; */
-  gap: 10px;
+  gap: 100px;
   background-color: rgb(50, 49, 51);
   justify-content: center; /* Center horizontally */
   padding: 10px;
@@ -144,14 +145,12 @@ input[type="text"] {
 }
 
 #uriContainer {  
-  width: 500;  
   font-weight: bold;
     font-size: 25px;
     border: 4px solid #ffae00;
     border-radius: 10px;
-    padding: 20px;
-    margin: auto;
-    margin-top: 20px;
+    margin: 0% 10%; /* top, right, bottom, left */
+    padding:20px;    
     white-space: pre-wrap;
     overflow-x: auto; /* Add a horizontal scrollbar when necessary */
     }
@@ -173,3 +172,27 @@ input[type="text"] {
   z-index: 6;
   box-shadow: 0 0 15px white; 
 }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#copyButton {
+  background-color: #4c00b0;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;  
+  animation: pulse 2s infinite; /* Adjust the animation duration and iterations as needed */
+}
+

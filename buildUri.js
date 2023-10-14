@@ -82,7 +82,11 @@ export async function mint(tokenUri, preferedNetwork) {
             "\nContract Address: " +
             contractAddress
         );
-
+        uriContainer.textContent =
+          "Token ID: " +
+          tokenId.toString() +
+          "\nContract Address: " +
+          contractAddress;
         const copyButton = document.createElement("button");
         copyButton.id = "copyButton";
         copyButton.textContent = "Copy Token ID";

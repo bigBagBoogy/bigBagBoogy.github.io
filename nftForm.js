@@ -5,10 +5,13 @@ const descriptionInput = document.getElementById("description");
 const traitTypeInput = document.getElementById("traitType");
 const traitValueInput = document.getElementById("traitValue");
 const nftImageInput = document.getElementById("nftImageButton");
-
+const nameOfNft = document.getElementById("name");
+const descriptionOfNft = document.getElementById("description");
+const traitTypeOfNft = document.getElementById("traitType");
+const traitValueOfNft = document.getElementById("traitValue");
 const mintButton = document.getElementById("mintButton");
 const mintOnPolygonButton = document.getElementById("mintOnPolygonButton");
-const checkURIbutton = document.getElementById("checkURIbutton");
+// const checkURIbutton = document.getElementById("checkURIbutton");
 const uriContainer = document.getElementById("uriContainer");
 const imageUrl = "/images/bearYellow.svg"; // ********* Change this to your image path *********
 const ETHEREUM_NETWORK = "0xaa36a7";
@@ -19,38 +22,77 @@ let description;
 let traitType;
 let traitValue;
 
-checkURIbutton.addEventListener("click", async () => {
-  const nftImageFile = nftImageInput.files[0];
+nameOfNft.addEventListener("input", updateUriContainer);
+descriptionOfNft.addEventListener("input", updateUriContainer);
+traitTypeOfNft.addEventListener("input", updateUriContainer);
+traitValueOfNft.addEventListener("input", updateUriContainer);
 
-  if (!nftImageFile) {
-    // Handle the case where no file is selected
-    console.error("No image file selected");
-    return;
+function updateUriContainer() {
+  const nameValue = nameOfNft.value;
+  const descriptionValue = descriptionOfNft.value;
+  const traitTypeValue = traitTypeOfNft.value;
+  const traitValueValue = traitValueOfNft.value;
+  uriContainer.textContent =
+    "name: " +
+    nameValue +
+    "\n" +
+    "description: " +
+    descriptionValue +
+    "\n" +
+    "traitType: " +
+    traitTypeValue +
+    "\n" +
+    "traitValue: " +
+    traitValueValue;
+}
+
+nftImageInput.addEventListener("change", function () {
+  // Check if a file has been selected
+  if (nftImageInput.files && nftImageInput.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      const imageContainer = document.getElementById("imageContainer");
+      imageContainer.src = e.target.result;
+    };
+
+    // Read the selected file as a data URL
+    reader.readAsDataURL(nftImageInput.files[0]);
   }
-  const reader = new FileReader();
-
-  reader.onload = async (event) => {
-    const imageUrl = event.target.result;
-    console.log("Image file loaded");
-    nftName = nameInput.value;
-    description = descriptionInput.value;
-    traitType = traitTypeInput.value;
-    traitValue = traitValueInput.value;
-    // Call encodeImageToBase64 with the input values
-    const { metadata, imgUri } = await encodeImageToBase64(
-      imageUrl,
-      nftName,
-      description,
-      traitType,
-      traitValue
-    );
-    uriContainer.textContent = metadata;
-    imageContainer.src = imgUri; // Set the src attribute to display the image
-    imageContainer.style.display = "block";
-  };
-
-  reader.readAsDataURL(nftImageFile);
 });
+
+// checkURIbutton.addEventListener("click", async () => {
+//   const nftImageFile = nftImageInput.files[0];
+
+//   if (!nftImageFile) {
+//     // Handle the case where no file is selected
+//     console.error("No image file selected");
+//     return;
+//   }
+//   const reader = new FileReader();
+
+//   reader.onload = async (event) => {
+//     const imageUrl = event.target.result;
+//     console.log("Image file loaded");
+//     nftName = nameInput.value;
+//     description = descriptionInput.value;
+//     traitType = traitTypeInput.value;
+//     traitValue = traitValueInput.value;
+//     // Call encodeImageToBase64 with the input values
+//     const { metadata, imgUri } = await encodeImageToBase64(
+//       imageUrl,
+//       nftName,
+//       description,
+//       traitType,
+//       traitValue
+//     );
+//     uriContainer.textContent = metadata;
+//     imageContainer.src = imgUri; // Set the src attribute to display the image
+//     imageContainer.style.display = "block";
+//   };
+
+//   reader.readAsDataURL(nftImageFile);
+// });
 
 ///////////////////////////////
 //////// mint on Ethereum /////
