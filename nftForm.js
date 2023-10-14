@@ -54,6 +54,16 @@ nftImageInput.addEventListener("change", function () {
     reader.onload = function (e) {
       const imageContainer = document.getElementById("imageContainer");
       imageContainer.src = e.target.result;
+
+      // Get the file type
+      const selectedFile = nftImageInput.files[0];
+      const fileType = selectedFile.type;
+      console.log("File type: " + fileType);
+
+      // Get the file size in kilobytes
+      const fileSize = selectedFile.size;
+      const fileSizeKB = fileSize / 1024;
+      console.log("File size: " + fileSizeKB + " KB");
     };
 
     // Read the selected file as a data URL

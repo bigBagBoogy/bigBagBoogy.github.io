@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "removed unnecessary check URI button"
+git commit -m "added file-size and type detection"
 git push -u origin main
 
 # todo:⭐️
