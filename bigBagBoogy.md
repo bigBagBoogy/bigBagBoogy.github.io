@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "amended CSS"
+git commit -m "aligned form input"
 git push -u origin main
 
 # todo:⭐️

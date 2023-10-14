@@ -5,43 +5,50 @@
     <link rel="icon" href="images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>NFT Minting</title>    
+    <title>NFT Minting</title>
     <script src="buildUri.js" type="module"></script>
   </head>
   <body>
     <div class="header-container" id="header-container">
-    <button class="button" id="connectButton">Connect Metamask</button>
-    <h1 id="header" style="font-size: 24px;">Mint your NFT 100% onChain <em style="font-size: 32px;">Testnet</em></h1>
-  </div>
-    <div class="grid-container" id="grid-container">
-    <img id="imageContainer" src="" alt="" />
-
-    <form id="nftForm">
-      <label for="name">nft name:</label>
-      <input type="text" id="name" name="name"><br><br>
-      <label for="description">description:</label>
-      <input type="text" id="description" name="description"><br><br>
-      <label for="traitType">traitType:</label>
-      <input type="text" id="traitType" name="traitType"><br><br>
-      <label for="traitValue">traitValue:</label>
-      <input type="text" id="traitValue" name="traitValue"><br><br>
-      <label for="nftImage">Select SVG Image:</label>
-      <input type="file" id="nftImageButton" name="nftImageButton" accept=".svg" /><br /><br />
-    </form>
-    <button id="checkURIbutton">Check URI</button>
+      <button class="button" id="connectButton">Connect Metamask</button>
+      <h1 id="header" style="font-size: 24px">
+        Mint your NFT 100% onChain <em style="font-size: 32px">Testnet</em>
+      </h1>
     </div>
-  </div>
-    
-    
-    <div id="uriContainer"><h2>Your Token MetaData will look like this</h2></div>
-    
 
-    <div class="button-container">   
-      <button class="mintButton" id="mintButton">Mint NFT on Ethereum</button>      
-      <button class="mintButton" id="mintOnPolygonButton">Mint NFT on Polygon</button>
+    <div class="grid-container" id="grid-container">
+      <img id="imageContainer" src="" alt="" />
+      <form id="nftForm">
+        <label for="name">nft name:</label>
+        <input type="text" id="name" name="name" /><br /><br />
+        <label for="description">description:</label>
+        <input type="text" id="description" name="description" /><br /><br />
+        <label for="traitType">traitType:</label>
+        <input type="text" id="traitType" name="traitType" /><br /><br />
+        <label for="traitValue">traitValue:</label>
+        <input type="text" id="traitValue" name="traitValue" /><br /><br />
+        <label for="nftImage">Select SVG Image:</label>
+        <input
+          type="file"
+          id="nftImageButton"
+          name="nftImageButton"
+          accept=".svg"
+        /><br /><br />
+      </form>
+      <button id="checkURIbutton">Check URI</button>
+    </div>
+
+    <div id="uriContainer">
+      <h2>Your Token MetaData will look like this</h2>
+    </div>
+
+    <div class="button-container">
+      <button class="mintButton" id="mintButton">Mint NFT on Ethereum</button>
+      <button class="mintButton" id="mintOnPolygonButton">
+        Mint NFT on Polygon
+      </button>
     </div>
 
     <script src="nftForm.js" type="module"></script>
-  
   </body>
 </html>

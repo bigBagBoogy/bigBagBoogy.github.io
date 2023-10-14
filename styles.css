@@ -55,10 +55,23 @@ background-color: #ffbda5; /* Change the background color on hover */
 #connectButton:active {
 background-color: #3f14ff; /* Change the background color when the button is clicked */
 }
+#imageContainer {
+  height: 400px;
+  max-width: 100%;
+  margin: 8% 10% 2% 10%; /* top, right, bottom, left */
+  background-color: #2a2b2b;
+  border-radius: 10px;
+  align-self: start; /* Align vertically to the start of the row */
+  text-align: center;
+}
+
+#imageContainer img {
+  max-width: 100%;
+}
 
 #grid-container {
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 30% 45% 25%;
     /* grid-template-rows: 80px 200px; */
   gap: 10px;
   background-color: rgb(50, 49, 51);
@@ -88,20 +101,7 @@ background-color: #3f14ff; /* Change the background color when the button is cli
 position: relative; /* Set the vertical position*/
  
 }
-#imageContainer {
-  height: 400px;
-  max-width: 100%;
-  margin: 8% 10% 2% 10%; /* top, right, bottom, left */
-  background-color: #2a2b2b;
-  border-radius: 10px;
-  align-self: start; /* Align vertically to the start of the row */
-  margin: auto;
-}
 
-#imageContainer img {
-  max-width: 100%;
-  
-}
 
 /* Style for form labels (text ABOVE the labels) */
 label {
@@ -111,7 +111,7 @@ label {
 
 #nftForm {  
   width: 100%;
-  max-width: 400px; /* Adjust the maximum width as needed */ 
+  max-width: 500px; /* Adjust the maximum width as needed */ 
 }
 
 /* Style for input fields */
@@ -122,6 +122,10 @@ input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+}
+
+#nftForm input[type="text"] {
+  width: 450px; /* Adjust the width as needed */  
 }
 
 #nftImageButton {
@@ -136,19 +140,16 @@ input[type="text"] {
   cursor: pointer;
   z-index: 6;
   box-shadow: 0 0 10px white;
+  width: 450px;
 }
 
-
-
-
-
 #uriContainer {  
-  width: 500;
+  width: 500;  
   font-weight: bold;
     font-size: 25px;
     border: 4px solid #ffae00;
     border-radius: 10px;
-    padding: 50px;
+    padding: 20px;
     margin: auto;
     margin-top: 20px;
     white-space: pre-wrap;
