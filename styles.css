@@ -196,3 +196,6 @@ input[type="text"] {
   animation: pulse 2s infinite; /* Adjust the animation duration and iterations as needed */
 }
 
+.italic-placeholder::placeholder {
+  font-style: italic;
+}

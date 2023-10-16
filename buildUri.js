@@ -3,7 +3,6 @@ import { abi } from "/constants.js"; // ethereum
 
 const ETHEREUM_NETWORK = "0xaa36a7";
 const POLYGON_NETWORK = "0x13881";
-// const gasLimit = 300000;
 
 const connectButton = document.getElementById("connectButton");
 connectButton.onclick = connect;
@@ -119,7 +118,6 @@ export async function encodeImageToBase64(
   traitValue
 ) {
   try {
-    console.log(clientImageUrl);
     const response = await fetch(clientImageUrl);
     const data = await response.blob();
     console.log(data);
@@ -139,7 +137,7 @@ export async function encodeImageToBase64(
     // Base64 encode the entire metadata string
     const encodedMetadata = btoa(metadataString);
     const jsonTokenUri = `data:application/json;base64,${encodedMetadata}`;
-    // console.log(jsonTokenUri);
+    console.log(imgUri);
 
     return {
       metadata: metadataString,

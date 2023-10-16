@@ -63,7 +63,7 @@ nftImageInput.addEventListener("change", function () {
       const fileSize = selectedFile.size;
       const fileSizeKB = fileSize / 1024;
       console.log("File size: " + fileSizeKB + " KB" + fileSize + " bytes");
-      if (fileSize > 20000) {
+      if (fileSize > 22000) {
         alert(
           "File size exceeds the limit of 20 kb. Please select a smaller file."
         );
@@ -116,15 +116,13 @@ nftImageInput.addEventListener("change", function () {
 mintButton.addEventListener("click", async () => {
   const preferedNetwork = ETHEREUM_NETWORK;
   const nftImageFile = nftImageInput.files[0];
-
   if (!nftImageFile) {
     // Handle the case where no file is selected
     console.error("No image file selected");
+    alert("No image file selected");
     return;
   }
-
   const reader = new FileReader();
-
   reader.onload = async (event) => {
     const imageUrl = event.target.result;
     console.log("Image file loaded");
@@ -133,16 +131,13 @@ mintButton.addEventListener("click", async () => {
     traitType = traitTypeInput.value;
     traitValue = traitValueInput.value;
     // Call encodeImageToBase64 with the input values
-    const { metadata, tokenUri, imgUri } = await encodeImageToBase64(
+    const { tokenUri } = await encodeImageToBase64(
       imageUrl,
       nftName,
       description,
       traitType,
       traitValue
     );
-    uriContainer.textContent = metadata;
-    imageContainer.src = imgUri; // Set the src attribute to display the image
-    imageContainer.style.display = "block";
     await mint(tokenUri, preferedNetwork);
   };
 
@@ -154,13 +149,12 @@ mintButton.addEventListener("click", async () => {
 mintOnPolygonButton.addEventListener("click", async () => {
   const preferedNetwork = POLYGON_NETWORK;
   const nftImageFile = nftImageInput.files[0];
-
   if (!nftImageFile) {
     // Handle the case where no file is selected
     console.error("No image file selected");
+    alert("No image file selected");
     return;
   }
-
   const reader = new FileReader();
 
   reader.onload = async (event) => {
@@ -171,17 +165,13 @@ mintOnPolygonButton.addEventListener("click", async () => {
     traitType = traitTypeInput.value;
     traitValue = traitValueInput.value;
     // Call encodeImageToBase64 with the input values
-    const { metadata, tokenUri, imgUri } = await encodeImageToBase64(
+    const { tokenUri } = await encodeImageToBase64(
       imageUrl,
       nftName,
       description,
       traitType,
       traitValue
     );
-    uriContainer.textContent = metadata;
-    imageContainer.src = imgUri; // Set the src attribute to display the image
-    imageContainer.style.display = "block";
-
     await mint(tokenUri, preferedNetwork);
   };
 
