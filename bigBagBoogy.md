@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "added second page"
+git commit -m "added drag n drop"
 git push -u origin main
 
 # todo:⭐️
