@@ -1,0 +1,191 @@
+body {
+    background-color: rgb(50, 49, 51);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .header-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: 80px; /* Set the row height */
+    background-color: rgb(37, 27, 46);
+    padding: 10px;
+  }
+  
+  /* Style for the links */
+  .header-button {
+  text-decoration: none;
+  color: #fff; /* Text color for the button */
+  font-weight: bold;
+  background-color: #ff8f67; /* Background color for the button */
+  padding: 1px 1px; /* Adjust padding for a smaller size */
+  border-radius: 5px; /* Rounded corners for the button */
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  font-size: 20px; /* Adjust font size as needed */
+}
+  
+  /* Media query for smaller screens */
+  @media (max-width: 600px) {
+    .header-container {
+      grid-template-columns: auto;
+      text-align: center;
+    }
+}
+  
+  
+  .button-container {    
+    margin-top: 1%; 
+    text-align: center;
+  }
+  .button-container button {
+  margin: 20px 50px; /* Add 20px margin on the top and bottom of each button */
+  }
+  
+ 
+  #grid-container {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    gap: 100px;
+    background-color: rgb(50, 49, 51);
+    justify-content: center; /* Center horizontally */
+    padding: 10px;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 600px) {
+    #grid-container {
+      grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+      text-align: center;
+    }
+  }
+  /* Add these styles to your CSS */
+.file-label {
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .preview-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    max-width: 75%;
+    margin: 8% 10% 2% 10%;
+    background-color: #2a2b2b;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  #imageContainer {
+    height: 300px;
+    max-width: 75%;
+    margin: 8% 10% 2% 10%; /* top, right, bottom, left */
+    background-color: #2a2b2b;
+    border-radius: 10px;
+    align-self: start; /* Align vertically to the start of the row */
+    text-align: center;
+  }
+  
+  #imageContainer img {
+    max-width: 100%;
+  }
+  
+  
+
+  
+  
+  
+  .mintButton {    
+    background-color: #2f0051ca;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;    
+    padding: 20px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 6;
+    box-shadow: 0 0 15px white; 
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  #copyButton {
+    background-color: #4c00b0;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;  
+    animation: pulse 2s infinite; /* Adjust the animation duration and iterations as needed */
+  }
+  
+  .italic-placeholder::placeholder {
+    font-style: italic;
+  }
+  /* Style for the footer */
+  footer {
+    margin-top: 10%;
+    background-color: #333; /* Background color for the footer */
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding for the footer content */
+    display: flex; /* Make the children (text and buttons) flex items */
+    justify-content: space-between; /* Space elements evenly */
+  }
+  
+  /* Style for the text in the footer */
+  .footer-text {
+    flex: 1; /* Expand to take available space */
+    margin-bottom: 10px; /* Add space between text and buttons */
+  }
+  
+  /* Style for the buttons in the footer */
+  .footer-buttons {
+    display: flex; /* Make the buttons horizontal */
+    gap: 10px; /* Gap between buttons */
+    flex: 1; /* Expand to take available space */
+  }
+  
+  /* Style for the links */
+  .footer-buttons a {
+    text-decoration: none;
+    color: #fff; /* Text color for the links */
+    font-weight: bold;
+    background-color: #ff8f67; /* Background color for the links */
+    padding: 5px 10px; /* Padding for the links */
+    border-radius: 5px; /* Rounded corners for the links */
+    display: flex; /* Use flexbox to center vertically */
+    align-items: center; /* Align text vertically center */
+  }
+  #faucetLink {
+    color: #ffae00;
+  }
+   /* Media query for smaller screens */
+   @media (max-width: 1000px) {
+    footer {
+      flex-direction: column;
+    }
+  }

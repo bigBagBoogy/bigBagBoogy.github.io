@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesAscii.css" />
+
+    <script src="image-handler.js" type="module"></script>
+    <title>NFT Minting</title>
+  </head>
+  <body>
+    <div class="header-container" id="header-container">
+      <a href="index.html" class="header-button">HOME</a>
+      <h1 id="header" style="font-size: 24px">
+        Turn your image into Ascii Art
+      </h1>
+    </div>
+
+    <div class="grid-container" id="grid-container">
+      <div class="image-container" id="imageContainer1">
+        <label for="fileInput" class="file-label"> Click to Add Image </label>
+        <input
+          type="file"
+          id="fileInput"
+          accept="image/*"
+          style="display: none"
+        />
+        <img id="previewImage" src="" alt="" class="preview-image" />
+      </div>
+      <div class="image-container" id="imageContainer2">
+        <img src="" alt="" class="preview-image" />
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="mintButton" id="mintButton">Make Ascii SVG</button>
+      <button class="mintButton" id="mintOnPolygonButton">
+        Make Pixel Art PNG
+      </button>
+    </div>
+    <footer>
+      <div class="footer-text">
+        This application returns SVG's and PNG's. While the SVG's are scalable
+        and will not lose quality, the PNG's will be pixelated when enlarged.
+        For more information on creating SVG's:
+        <a
+          id="faucetLink"
+          href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html"
+          >adobe-svg.com</a
+        >.
+      </div>
+      <div class="footer-buttons">
+        <a href="index.html">Mint Testnet NFT</a>
+        <a href="page2.html">View your NFT's</a>
+      </div>
+    </footer>
+  </body>
+</html>
