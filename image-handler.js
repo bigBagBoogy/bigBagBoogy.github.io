@@ -8,6 +8,7 @@ fileInput.addEventListener("change", (e) => {
     const reader = new FileReader();
     reader.onload = (event) => {
       previewImage.src = event.target.result;
+      console.log("Image file loaded");
     };
     reader.readAsDataURL(file);
   }
