@@ -155,7 +155,7 @@ fileInput.addEventListener("change", (e) => {
       img.src = event.target.result;
 
       img.onload = () => {
-        const maxWidth = 200; // Maximum width for the resized image
+        const maxWidth = 500; // Maximum width for the resized image
         const aspectRatio = img.width / img.height;
         let newWidth, newHeight;
 
@@ -173,14 +173,28 @@ fileInput.addEventListener("change", (e) => {
         canvas.height = newHeight;
         const ctx = canvas.getContext("2d");
 
+        // Draw the image onto the canvas
         ctx.drawImage(img, 0, 0, newWidth, newHeight);
 
-        // You can use canvas.toDataURL() to get the resized image as a data URL
+        // Apply contrast to the canvas
+        const imageData = ctx.getImageData(0, 0, newWidth, newHeight);
+        const data = imageData.data;
+        const contrastFactor = 1.5; // Adjust this value to control the contrast
+
+        for (let i = 0; i < data.length; i += 4) {
+          data[i] = data[i] * contrastFactor; // Red channel
+          data[i + 1] = data[i + 1] * contrastFactor; // Green channel
+          data[i + 2] = data[i + 2] * contrastFactor; // Blue channel
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+
+        // You can use canvas.toDataURL() to get the resized and contrast-adjusted image as a data URL
         const resizedImageURL = canvas.toDataURL("image/jpeg"); // Change the format if needed
 
-        // Now, you can set this resized image URL as the source for the preview
+        // Set the resized and contrast-adjusted image as the source for the preview
         previewImage.src = resizedImageURL;
-        console.log("Image file loaded and resized");
+        console.log("Image file loaded, resized, and contrast adjusted");
       };
     };
     reader.readAsDataURL(file);
