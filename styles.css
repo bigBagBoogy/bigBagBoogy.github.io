@@ -199,3 +199,46 @@ input[type="text"] {
 .italic-placeholder::placeholder {
   font-style: italic;
 }
+/* Style for the footer */
+footer {
+  margin-top: 10%;
+  background-color: #333; /* Background color for the footer */
+  color: #fff; /* Text color */
+  padding: 20px; /* Padding for the footer content */
+  display: flex; /* Make the children (text and buttons) flex items */
+  justify-content: space-between; /* Space elements evenly */
+}
+
+/* Style for the text in the footer */
+.footer-text {
+  flex: 1; /* Expand to take available space */
+  margin-bottom: 10px; /* Add space between text and buttons */
+}
+
+/* Style for the buttons in the footer */
+.footer-buttons {
+  display: flex; /* Make the buttons horizontal */
+  gap: 10px; /* Gap between buttons */
+  flex: 1; /* Expand to take available space */
+}
+
+/* Style for the links */
+.footer-buttons a {
+  text-decoration: none;
+  color: #fff; /* Text color for the links */
+  font-weight: bold;
+  background-color: #ff8f67; /* Background color for the links */
+  padding: 5px 10px; /* Padding for the links */
+  border-radius: 5px; /* Rounded corners for the links */
+  display: flex; /* Use flexbox to center vertically */
+  align-items: center; /* Align text vertically center */
+}
+#faucetLink {
+  color: #ffae00;
+}
+ /* Media query for smaller screens */
+ @media (max-width: 1000px) {
+  footer {
+    flex-direction: column;
+  }
+}
