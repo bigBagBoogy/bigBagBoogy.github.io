@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "removed redundant setImage"
+git commit -m "removed Polygon ABI"
 git push -u origin main
 
 # todo:⭐️
