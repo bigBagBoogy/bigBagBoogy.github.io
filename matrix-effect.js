@@ -151,8 +151,37 @@ fileInput.addEventListener("change", (e) => {
   if (file) {
     const reader = new FileReader();
     reader.onload = (event) => {
-      previewImage.src = event.target.result;
-      console.log("Image file loaded");
+      const img = new Image();
+      img.src = event.target.result;
+
+      img.onload = () => {
+        const maxWidth = 200; // Maximum width for the resized image
+        const aspectRatio = img.width / img.height;
+        let newWidth, newHeight;
+
+        if (img.width > maxWidth) {
+          newWidth = maxWidth;
+          newHeight = newWidth / aspectRatio;
+        } else {
+          // If the image is already smaller than the maximum width, keep its original dimensions
+          newWidth = img.width;
+          newHeight = img.height;
+        }
+
+        const canvas = document.createElement("canvas");
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        const ctx = canvas.getContext("2d");
+
+        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+        // You can use canvas.toDataURL() to get the resized image as a data URL
+        const resizedImageURL = canvas.toDataURL("image/jpeg"); // Change the format if needed
+
+        // Now, you can set this resized image URL as the source for the preview
+        previewImage.src = resizedImageURL;
+        console.log("Image file loaded and resized");
+      };
     };
     reader.readAsDataURL(file);
   }

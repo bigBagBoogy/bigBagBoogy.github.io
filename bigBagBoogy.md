@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "fix large input images"
+git commit -m "adjust img size line 158"
 git push -u origin main
 
 # todo:⭐️
