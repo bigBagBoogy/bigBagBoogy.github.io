@@ -53,3 +53,25 @@ origin https://github.com/bigBagBoogy/bigBagBoogy.github.io.git (push)
 # link to website:
 
 https://bigBagBoogy.github.io
+
+# free hosting static site:
+
+GitHub Pages: Offers free hosting for static websites directly from your GitHub repositories.
+
+Netlify: Provides a powerful platform for deploying static sites, with continuous deployment, custom domains, and serverless functions. It has a free plan.
+
+Vercel (formerly Zeit): Offers hosting for static and serverless functions, with automatic deployments from your Git repository. It has a free tier.
+
+GitLab Pages: GitLab's equivalent to GitHub Pages, which allows you to host static sites from your GitLab repositories.
+
+Bitbucket: Bitbucket offers static website hosting directly from your repositories. It's a similar service to GitHub Pages.
+
+AWS Amplify: Part of Amazon Web Services (AWS), it offers hosting for static sites and serverless functions. A free tier is available.
+
+Firebase Hosting: Part of Google's Firebase platform, it provides hosting for web apps, including static websites. Firebase has a free plan.
+
+Render: Offers a platform for web hosting and application deployment. It provides a free tier for small projects.
+
+Zeit Now (deprecated, replaced by Vercel): Zeit's predecessor, which offered hosting and deployments for web projects.
+
+Surge: Provides simple static site hosting with custom domains. It offers a free plan.
