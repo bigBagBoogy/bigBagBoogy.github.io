@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesAscii.css" />
     <script src="libraries/p5.min.js"></script>
+    <script src="maxWidthSlider.js" type="module"></script>
     <script src="matrix-effect.js" type="module"></script>
 
     <title>NFT Minting</title>
@@ -34,12 +35,16 @@
       </div>
     </div>
 
+    <label for="maxWidthSlider" class="slider-label">pre-size</label>
+    <input type="range" id="maxWidthSlider" min="40" max="400" value="200" />
+    <output for="maxWidthSlider" id="maxWidthValue">500</output>
+
+    <button class="downloadImage" id="downloadButton">Download Image</button>
+
+    <br /><br />
     <div class="button-container">
       <button class="artButton" id="AsciiButton">Make Ascii SVG</button>
-      <button class="artButton" id="pixelButton">Make Pixel Art PNG</button
-      ><br /><br />
-
-      <button class="downloadImage" id="downloadButton">Download Image</button>
+      <button class="artButton" id="pixelButton">Make Pixel Art PNG</button>
     </div>
     <footer>
       <div class="footer-text">

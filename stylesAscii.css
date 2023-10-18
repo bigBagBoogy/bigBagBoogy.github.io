@@ -200,5 +200,16 @@ body {
     z-index: 9999;
     cursor: pointer;
   }
+  #downloadButton {
+    margin-left: 30%;
+  }
+#maxWidthSlider{
+  margin-left: 2%;
+}
 
+.slider-label {
+  margin-left: 10%;
+  color: #ffffff;
+  font-weight: bold;
+}
   

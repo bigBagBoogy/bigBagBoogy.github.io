@@ -1,9 +1,12 @@
+import { getMaxWidth } from "./maxWidthSlider.js";
+
 const fileInput = document.getElementById("fileInput");
 const previewImage = document.getElementById("previewImage");
 const density = "Ñ@#W$9876543210?!abc;:=-,._M";
 let blobURL;
 
 console.log("starting script!");
+// console.log(maxWidth);
 
 // Custom map function to map a value from one range to another
 function map(value, start1, stop1, start2, stop2) {
@@ -155,15 +158,52 @@ fileInput.addEventListener("change", (e) => {
       img.src = event.target.result;
 
       img.onload = () => {
-        const maxWidth = 500; // Maximum width for the resized image
+        // Update the image when the slider value changes
+        maxWidthSlider.addEventListener("input", () => {
+          const aspectRatio = img.width / img.height;
+          const maxWidth = getMaxWidth();
+          let newWidth, newHeight;
+
+          if (img.width > maxWidth) {
+            newWidth = maxWidth;
+            newHeight = newWidth / aspectRatio;
+          } else {
+            newWidth = img.width;
+            newHeight = img.height;
+          }
+
+          const canvas = document.createElement("canvas");
+          canvas.width = newWidth;
+          canvas.height = newHeight;
+          const ctx = canvas.getContext("2d");
+
+          ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+          const imageData = ctx.getImageData(0, 0, newWidth, newHeight);
+          const data = imageData.data;
+          const contrastFactor = 1.5;
+
+          for (let i = 0; i < data.length; i += 4) {
+            data[i] = data[i] * contrastFactor;
+            data[i + 1] = data[i + 1] * contrastFactor;
+            data[i + 2] = data[i + 2] * contrastFactor;
+          }
+
+          ctx.putImageData(imageData, 0, 0);
+
+          const resizedImageURL = canvas.toDataURL("image/jpeg");
+          previewImage.src = resizedImageURL;
+        });
+
+        // Initial image sizing based on the slider value
         const aspectRatio = img.width / img.height;
+        const maxWidth = getMaxWidth();
         let newWidth, newHeight;
 
         if (img.width > maxWidth) {
           newWidth = maxWidth;
           newHeight = newWidth / aspectRatio;
         } else {
-          // If the image is already smaller than the maximum width, keep its original dimensions
           newWidth = img.width;
           newHeight = img.height;
         }
@@ -173,28 +213,22 @@ fileInput.addEventListener("change", (e) => {
         canvas.height = newHeight;
         const ctx = canvas.getContext("2d");
 
-        // Draw the image onto the canvas
         ctx.drawImage(img, 0, 0, newWidth, newHeight);
 
-        // Apply contrast to the canvas
         const imageData = ctx.getImageData(0, 0, newWidth, newHeight);
         const data = imageData.data;
-        const contrastFactor = 1.5; // Adjust this value to control the contrast
+        const contrastFactor = 1.5;
 
         for (let i = 0; i < data.length; i += 4) {
-          data[i] = data[i] * contrastFactor; // Red channel
-          data[i + 1] = data[i + 1] * contrastFactor; // Green channel
-          data[i + 2] = data[i + 2] * contrastFactor; // Blue channel
+          data[i] = data[i] * contrastFactor;
+          data[i + 1] = data[i + 1] * contrastFactor;
+          data[i + 2] = data[i + 2] * contrastFactor;
         }
 
         ctx.putImageData(imageData, 0, 0);
 
-        // You can use canvas.toDataURL() to get the resized and contrast-adjusted image as a data URL
-        const resizedImageURL = canvas.toDataURL("image/jpeg"); // Change the format if needed
-
-        // Set the resized and contrast-adjusted image as the source for the preview
+        const resizedImageURL = canvas.toDataURL("image/jpeg");
         previewImage.src = resizedImageURL;
-        console.log("Image file loaded, resized, and contrast adjusted");
       };
     };
     reader.readAsDataURL(file);
