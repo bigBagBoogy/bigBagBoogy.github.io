@@ -242,3 +242,38 @@ footer {
     flex-direction: column;
   }
 }
+/* Styling for the popup container */
+#popupContainer {
+  display: none; /* Initially hide the popup */
+  position: fixed; /* Position it fixed on the viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+#popupContainer h2 {  /* this is the header text */
+  text-align: center;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 1); /* Adjust the alpha value (0.5 in this example) */
+}
+
+.popup-content {
+  background: #ff8800; /* Background color of the popup */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+
+/* Additional styling for the close button (if needed) */
+#closePopupButton {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 5px;
+}

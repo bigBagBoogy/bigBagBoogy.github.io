@@ -1,4 +1,5 @@
 import { mint, encodeImageToBase64 } from "./buildUri.js";
+import { openPopup } from "./popup.js";
 
 const nameInput = document.getElementById("name");
 const descriptionInput = document.getElementById("description");
@@ -64,9 +65,12 @@ nftImageInput.addEventListener("change", function () {
       const fileSizeKB = fileSize / 1024;
       console.log("File size: " + fileSizeKB + " KB" + fileSize + " bytes");
       if (fileSize > 22000) {
-        alert(
-          "File size exceeds the limit of 20 kb. Please select a smaller file."
-        );
+        const message = document.createElement("div");
+        message.innerHTML = `File size exceeds the limit of 20 KB.<br>Please select a smaller file. Your file is: ${Math.floor(
+          fileSizeKB
+        )} KB`;
+        openPopup(message);
+        return;
       } else {
         imageContainer.src = e.target.result;
       }
