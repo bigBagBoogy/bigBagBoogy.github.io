@@ -33,18 +33,23 @@
       <div class="image-container" id="imageContainer2">
         <img src="" alt="" class="preview-image" />
       </div>
+      <div class="slider-container" id="slider">
+        <label for="maxWidthSlider" class="slider-label">pre-size</label>
+        <input
+          type="range"
+          id="maxWidthSlider"
+          min="40"
+          max="400"
+          value="200"
+        />
+        <output for="maxWidthSlider" id="maxWidthValue">500</output>
+      </div>
+      <button class="downloadImage" id="downloadButton">Download Image</button>
     </div>
-
-    <label for="maxWidthSlider" class="slider-label">pre-size</label>
-    <input type="range" id="maxWidthSlider" min="40" max="400" value="200" />
-    <output for="maxWidthSlider" id="maxWidthValue">500</output>
-
-    <button class="downloadImage" id="downloadButton">Download Image</button>
-
     <br /><br />
     <div class="button-container">
       <button class="artButton" id="AsciiButton">Make Ascii SVG</button>
-      <button class="artButton" id="pixelButton">Make Pixel Art PNG</button>
+      <!-- <button class="artButton" id="pixelButton">Make Pixel Art PNG</button> -->
     </div>
     <footer>
       <div class="footer-text">
@@ -59,7 +64,7 @@
       </div>
       <div class="footer-buttons">
         <a href="index.html">Mint Testnet NFT</a>
-        <a href="page2.html">View your NFT's</a>
+        <a href="https://nftviewer-app.netlify.app/">View your NFT's</a>
       </div>
     </footer>
   </body>

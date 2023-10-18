@@ -48,17 +48,37 @@ body {
   #grid-container {
     display: grid;
     grid-template-columns: 40% 40%;
-    gap: 100px;
+    column-gap: 100px; /* This one is crucial */
+    row-gap: 10px; /* This one is crucial */
     background-color: rgb(50, 49, 51);
-    justify-content: center; /* Center horizontally */
-    padding: 10px;
+    justify-content: center; /* Center horizontally */ 
+    display: grid;
+  height: auto; /* This one is crucial */
+  row-gap: 10px;
+  padding: 10px;       
   }
   
   /* Media query for smaller screens */
   @media (max-width: 600px) {
     #grid-container {
-      grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+      grid-template-columns: 1fr;
       text-align: center;
+    }
+  
+    #grid-container > .image-container#imageContainer1 {
+      order: 1; /* Display the specific div first */
+    }
+
+    #grid-container > .image-container#imageContainer2 {
+      order: 3; /* Display second */
+    }    
+    
+   #grid-container > .slider-container#slider {
+      order: 2; /* Display third */
+    }
+  
+   #grid-container > .downloadImage#downloadButton {
+      order: 4; /* Display fourth */
     }
   }
   
@@ -200,16 +220,28 @@ body {
     z-index: 9999;
     cursor: pointer;
   }
-  #downloadButton {
-    margin-left: 30%;
+ 
+  .slider-container {
+    margin-right: 8%; ;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-self: center; /* Align vertically to the start of the row */
+    text-align: center;
+  } 
+  .downloadImage { /*this is a button*/
+    display: flex;
+    align-items: center;
+    height: 50px;
+    max-width: 20%;
+    color: white;
+    font-weight: bold;
+    margin-left:  37%;
+    background-color: #e79e00;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    padding:  20px 50px;
   }
-#maxWidthSlider{
-  margin-left: 2%;
-}
-
-.slider-label {
-  margin-left: 10%;
-  color: #ffffff;
-  font-weight: bold;
-}
-  
