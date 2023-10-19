@@ -215,8 +215,9 @@ footer {
 
 /* Style for the buttons in the footer */
 .footer-buttons {
+  margin-left: 10%;
   display: flex; /* Make the buttons horizontal */
-  gap: 10px; /* Gap between buttons */
+  gap: 20px; /* Gap between buttons */
   flex: 1; /* Expand to take available space */
 }
 
