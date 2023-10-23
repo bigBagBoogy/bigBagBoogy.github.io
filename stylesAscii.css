@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(50, 49, 51);
+    background-color: #0f172a;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
@@ -9,7 +9,7 @@ body {
     display: grid;
     grid-template-columns: 10% auto;
     grid-template-rows: 80px; /* Set the row height */
-    background-color: rgb(37, 27, 46);
+    background-color: #0f172a;
     padding: 10px;
   }
   
@@ -50,7 +50,7 @@ body {
     grid-template-columns: 40% 40%;
     column-gap: 100px; /* This one is crucial */
     row-gap: 10px; /* This one is crucial */
-    background-color: rgb(50, 49, 51);
+    background-color: #0f172a;
     justify-content: center; /* Center horizontally */ 
     display: grid;
   height: auto; /* This one is crucial */

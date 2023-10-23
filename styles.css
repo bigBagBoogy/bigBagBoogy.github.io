@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(50, 49, 51);
+  background-color: #0f172a;
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -75,7 +75,7 @@ background-color: #3f14ff; /* Change the background color when the button is cli
   grid-template-columns: 40% 40%;
     /* grid-template-rows: 80px 200px; */
   gap: 100px;
-  background-color: rgb(50, 49, 51);
+  background-color: #0f172a;
   justify-content: center; /* Center horizontally */
   padding: 10px;
 }

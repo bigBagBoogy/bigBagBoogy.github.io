@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "added file type check"
+git commit -m "changed background color"
 git push -u origin main
 
 # todo:⭐️
