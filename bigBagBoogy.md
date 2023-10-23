@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "removed png and jpg options"
+git commit -m "added file type check"
 git push -u origin main
 
 # todo:⭐️

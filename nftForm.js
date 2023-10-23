@@ -71,6 +71,11 @@ nftImageInput.addEventListener("change", function () {
         )} KB`;
         openPopup(message);
         return;
+      } else if (fileType !== "image/svg+xml") {
+        const message = document.createElement("div");
+        message.innerHTML = "Please select a SVG file.";
+        openPopup(message);
+        return;
       } else {
         imageContainer.src = e.target.result;
       }
