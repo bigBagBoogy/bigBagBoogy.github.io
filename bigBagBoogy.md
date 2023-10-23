@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "CSS for footer"
+git commit -m "removed png and jpg options"
 git push -u origin main
 
 # todo:⭐️
