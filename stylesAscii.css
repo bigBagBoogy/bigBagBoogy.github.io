@@ -245,3 +245,10 @@ body {
     justify-content: center; /* Center text horizontally */
     padding:  20px 50px;
   }
+  #bearGreen {
+    max-width: 200px;
+  }
+  .flippable-image {
+    max-width: 200px;
+    transition: transform 1.5s; /* Add a transition for the transform property */
+  }

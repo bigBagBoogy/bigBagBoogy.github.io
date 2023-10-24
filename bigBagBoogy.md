@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "changed background color"
+git commit -m "added bearGreen test project"
 git push -u origin main
 
 # todo:⭐️
@@ -75,3 +75,7 @@ Render: Offers a platform for web hosting and application deployment. It provide
 Zeit Now (deprecated, replaced by Vercel): Zeit's predecessor, which offered hosting and deployments for web projects.
 
 Surge: Provides simple static site hosting with custom domains. It offers a free plan.
+
+# hidden code:
+
+bearGreen card-flip animation. commented out in html line 70 and JS line 277

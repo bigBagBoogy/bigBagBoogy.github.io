@@ -269,3 +269,34 @@ downloadButton.addEventListener("click", () => {
   // Revoke the object URL
   URL.revokeObjectURL(blobURL);
 });
+
+////////////////////////////////
+///    alt code    /////////////
+////////////////////////////////
+
+// var bearGreen = document.getElementById("bearGreen");
+
+// // Add a click event listener to the image
+// bearGreen.addEventListener("click", function () {
+//   console.log("Current src:", bearGreen.src);
+
+//   if (bearGreen.src.endsWith("images/bearGreen.svg")) {
+//     bearGreen.src = "images/bearPink.svg";
+//   } else {
+//     bearGreen.src = "images/bearGreen.svg";
+//   }
+// });
+// var bearGreen = document.getElementById("bearGreen");
+// var isFlipped = false;
+
+// bearGreen.addEventListener("click", function () {
+//   isFlipped = !isFlipped; // Toggle the flip state
+
+//   if (isFlipped) {
+//     bearGreen.style.transform = "rotateY(180deg)"; // Apply a 180-degree flip
+//     bearGreen.src = "images/bearPink.svg";
+//   } else {
+//     bearGreen.style.transform = "rotateY(0deg)"; // Reset the flip
+//     bearGreen.src = "images/bearGreen.svg";
+//   }
+// });
