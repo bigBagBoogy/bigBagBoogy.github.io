@@ -229,22 +229,21 @@ body {
     align-self: center; /* Align vertically to the start of the row */
     text-align: center;
   } 
-  .downloadImage { /*this is a button*/
+  .downloadImage {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 50px;
     max-width: 20%;
     color: white;
     font-weight: bold;
-    margin-left:  37%;
+    margin: 0 auto; /* Center horizontally within its container */
     background-color: #e79e00;
     border-radius: 5px;
     text-align: center;
-    display: flex;
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
-    padding:  20px 50px;
+    padding: 10px 20px; /* Adjust padding to your needs */
   }
+  
   #bearGreen {
     max-width: 200px;
   }

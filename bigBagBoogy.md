@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "added bearGreen test project"
+git commit -m "improved CSS"
 git push -u origin main
 
 # todo:⭐️
