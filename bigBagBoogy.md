@@ -79,3 +79,23 @@ Surge: Provides simple static site hosting with custom domains. It offers a free
 # hidden code:
 
 bearGreen card-flip animation. commented out in html line 70 and JS line 277
+
+🚀 Excited to introduce my latest project - a cutting-edge Dapp for NFT enthusiasts! 🎨✨
+
+🔹 Introducing Testnet NFT-minter 🔹
+
+✨ What makes it unique? ✨
+
+🌟 100% On-Chain Minting: No more relying on centralized servers or ipfs! With Testnet NFT-minter, you can mint NFTs directly on the Ethereum and Polygon testnets, ensuring trust and decentralization.
+
+🖼️ SVG Magic: Love SVG images? We support SVG images up to 20KB, giving you the creative freedom you desire. Make your art come to life!
+
+🎨 Ascii Art Transformation: Ever wondered how your PNG or JPG image would look as an ASCII art SVG? Wonder no more! [Your Dapp's Name] can transform your images into captivating ASCII art.
+
+📈 NFT Portfolio Tracker: Easily monitor your NFT collection by simply submitting your public key. Keep an eye on your investments and share your unique art with the world.
+
+🔗 https://bigbagboogy.github.io/
+
+Feel free to reach out for more details or a demo. Let's shape the future of NFTs together! 🚀
+
+#NFTs #Web3 #DecentralizedArt #CryptoArt #Ethereum #Polygon #Blockchain #WebDevelopment #Dapp
