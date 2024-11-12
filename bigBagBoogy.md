@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "improved CSS"
+git commit -m "New App"
 git push -u origin main
 
 # todo:⭐️
@@ -99,3 +99,27 @@ bearGreen card-flip animation. commented out in html line 70 and JS line 277
 Feel free to reach out for more details or a demo. Let's shape the future of NFTs together! 🚀
 
 #NFTs #Web3 #DecentralizedArt #CryptoArt #Ethereum #Polygon #Blockchain #WebDevelopment #Dapp
+
+
+
+##   Now for the NEW and improve top layer: The average out of bitcoin application!
+
+I'm going to build a free-to-use browser-based app that is a calculation tool for people that want to sell their bitcoin in chunks at different incremental prices. The tool will give the user insight in the resulting outcome tested against different scenario's. So there's basically two variables: 1: The specific users plan to (average out) sell bitcoin. 2: A potential scenario of price action in the future.
+
+An example:
+user has 10 BTC.
+He wants to sell some in the expected bull run.
+He thinks of selling liniarly: 1 BTC at price 80.000, 1 at 90.000, 1 at 100.000 and so on until all has been sold.
+He wants to know both; How much cash he'll make when btc price goes to infinity and when it only goes to 101.000 before going down a lot for another bear market (crypto winter).
+
+This app requires input fields for:
+1. total holdings of BTC.
+2. desired amount of BTC to sell.
+3. increments between sales (sell points at BTC prices).
+4. amount per incremental sale. (this should enable liniar, progressive and degressive amounts).
+# With progressive amounts I mean: with every next sale (at a higher price) the amount of BTC to sell is more.
+5. Intended case scenario to test (the top of the bull market).
+
+
+
+

@@ -4,88 +4,99 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>NFT Minting</title>
-    <script src="buildUri.js" type="module"></script>
+    <link rel="stylesheet" href="btc-calc.css" />
+    <title>BTC Sale Calculator</title>
     <script src="popup.js" type="module"></script>
     <script src="libraries/p5.min.js"></script>
   </head>
   <body>
     <div class="header-container" id="header-container">
-      <button class="button" id="connectButton">Connect Metamask</button>
       <h1 id="header" style="font-size: 24px">
-        Mint your NFT 100% onChain <em style="font-size: 32px">Testnet</em>
+        Calculate Your Bitcoin Sale Strategy
+        <em style="font-size: 32px">FREE</em>
       </h1>
     </div>
 
-    <div class="grid-container" id="grid-container">
-      <img id="imageContainer" src="" alt="" />
-      <form id="nftForm">
-        <label for="name">nft name:</label>
-        <input type="text" id="name" name="name" /><br /><br />
-        <label for="description">description:</label>
-        <input type="text" id="description" name="description" /><br /><br />
-        <label for="traitType">traitType:</label>
-        <input
-          type="text"
-          id="traitType"
-          name="traitType"
-          placeholder="example: power"
-          class="italic-placeholder"
-        /><br /><br />
-        <label for="traitValue">traitValue:</label>
-        <input
-          type="text"
-          id="traitValue"
-          name="traitValue"
-          placeholder="example: 1000"
-          class="italic-placeholder"
-        /><br /><br />
-        <label for="nftImage">Select 20kb SVG Image:</label>
-        <input
-          type="file"
-          id="nftImageButton"
-          name="nftImageButton"
-          accept=".svg"
-        /><br /><br />
-        <!-- accepting png and jpeg needs first the encoding to be labeled accordingly! -->
-      </form>
-      <!-- <button id="checkURIbutton">Check URI</button> -->
+    <div id="btc-calculation-form">
+      <!-- Regular input fields -->
+      <label for="desiredBtcToSell">Desired BTC to Sell:</label>
+      <input type="number" id="desiredBtcToSell" placeholder="Enter total BTC to sell" required step="0.0001" />
+
+      <label for="btcToSell">BTC to Sell at Each Increment:</label>
+      <input type="number" id="btcToSell" placeholder="Enter BTC per sale" required step="0.0001" />
+
+      <label for="startingPrice">Starting Price for Selling (in USD):</label>
+      <input type="number" id="startingPrice" placeholder="Enter starting sale price" required />
+
+      <label for="priceIncrement">Price Increment Between Sales (in USD):</label>
+      <input type="number" id="priceIncrement" placeholder="Enter price increment" required />
+
+      <label for="scenarioTop">Bull Market Top to Simulate (in USD):</label>
+      <input type="number" id="scenarioTop" name="scenarioTop" placeholder="Enter bull market top scenario" required />
+
+      <!-- Advanced Exit Strategies Section -->
+      <div class="button-container">
+        <button class="calculateButton" id="calculateButton">
+          Calculate Sales Strategy
+        </button>
+        <button class="advancedButton" id="advancedToggleButton">
+          Advanced Exit Strategies
+        </button>
+      </div>
+
+      <!-- Hidden Advanced Section -->
+      <div id="advancedSection" style="display: none">
+        <label for="incrementPercent">Set Increment Percentage for Sell-Off:</label>
+        <input type="number" id="incrementPercent" placeholder="Enter percentage (e.g., 10 for +10%)" step="1" />
+        <!-- Dynamic text for explanation -->
+        <p id="percentageExplanation" style="font-size: 14px; color: #666;"></p>
+      </div>
     </div>
 
-    <div id="uriContainer">
-      <h2>Your Token MetaData will look like this</h2>
-    </div>
-
-    <div class="button-container">
-      <button class="mintButton" id="mintButton">Mint NFT on Ethereum</button>
-      <button class="mintButton" id="mintOnPolygonButton">
-        Mint NFT on Polygon
-      </button>
-    </div>
-
-    <!-- Custom Popup Container -->
+    <!-- Popup Container for Results -->
     <div id="popupContainer" class="popup-container">
       <div class="popup-content">
-        <h2></h2>
+        <h2>Calculation Results</h2>
+        <p id="resultsText">Results will appear here.</p>
         <button id="closePopupButton">Close</button>
       </div>
     </div>
-    <!-- Custom Popup Container -->
 
+    <!-- Footer with Collapsible Disclaimer -->
     <footer>
-      <div class="footer-text">
-        This application runs on Polygon and Ethereum testnet and works with
-        Sepolia ether and Mumbai Matic that can be obtained at:
-        <a id="faucetLink" href="https://sepoliafaucet.com/"
-          >sepoliafaucet.com</a
-        >.
-      </div>
+      <div class="footer-text">        
+        <!-- <a id="infoLink" href="https://bigbagboogy.com/">
+          BTC Sale Calculator Info
+        </a> -->
+        
+      <!-- </div>
       <div class="footer-buttons">
-        <a href="ascii.html">ASCII ART</a>
-        <a href="https://nftviewer-app.netlify.app/">View your NFT's</a>
+        <a href="test.html">Test Page</a>
+      </div> -->
+
+      <!-- Collapsible Disclaimer Section -->
+      <div>
+        <button
+          id="disclaimerToggle"
+          style="
+            background: none;
+            border: none;
+            color: #ff8f67;
+            font-weight: bold;            
+          "
+        >
+          Disclaimer
+        </button>
+        <div id="disclaimerContent" style="display: none">
+          <p>
+            This tool is for informational purposes only and does not constitute
+            financial advice. Please conduct your own research and consult a
+            financial advisor before making investment decisions.
+          </p>
+        </div>
       </div>
     </footer>
-    <script src="nftForm.js" type="module"></script>
+
+    <script src="btc-calc.js" type="module"></script>
   </body>
 </html>
