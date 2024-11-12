@@ -146,14 +146,16 @@ document.getElementById("disclaimerToggle").addEventListener("click", () => {
 document
   .getElementById("toggleNegative")
   .addEventListener("click", function () {
-    const input = document.getElementById("incrementPercent");
-    let value = parseFloat(input.value);
+    const inputField = document.getElementById("incrementPercent");
+    const currentValue = parseFloat(inputField.value);
 
-    // If the value is not negative, make it negative, otherwise make it positive
-    if (isNaN(value)) {
-      input.value = "-10"; // Default value if input is empty
-    } else {
-      input.value = value < 0 ? Math.abs(value) : -Math.abs(value);
+    if (!isNaN(currentValue)) {
+      if (currentValue > 0) {
+        // Convert the value to negative
+        inputField.value = -Math.abs(currentValue);
+      } else {
+        // Convert the value to positive
+        inputField.value = Math.abs(currentValue);
+      }
     }
-    input.dispatchEvent(new Event("input")); // Trigger input event for re-calculation
   });
