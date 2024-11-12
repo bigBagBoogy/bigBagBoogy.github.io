@@ -142,3 +142,18 @@ document.getElementById("disclaimerToggle").addEventListener("click", () => {
   disclaimerContent.style.display =
     disclaimerContent.style.display === "none" ? "block" : "none";
 });
+
+document
+  .getElementById("toggleNegative")
+  .addEventListener("click", function () {
+    const input = document.getElementById("incrementPercent");
+    let value = parseFloat(input.value);
+
+    // If the value is not negative, make it negative, otherwise make it positive
+    if (isNaN(value)) {
+      input.value = "-10"; // Default value if input is empty
+    } else {
+      input.value = value < 0 ? Math.abs(value) : -Math.abs(value);
+    }
+    input.dispatchEvent(new Event("input")); // Trigger input event for re-calculation
+  });

@@ -131,16 +131,7 @@ input[type="number"] {
   width: 100%;
   box-sizing: border-box;
 }
-/* Input field styling */
-input[type="tel"] {
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
+
 
 #btc-calculation-form {
   width: 100%;
@@ -197,4 +188,20 @@ footer {
   footer {
       flex-direction: column;
   }
+}
+
+#toggleNegative {
+  padding: 1px 12px;
+  margin-left: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ff8f00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#toggleNegative:hover {
+  background-color: #e68500;
 }
