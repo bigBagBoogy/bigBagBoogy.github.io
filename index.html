@@ -67,6 +67,50 @@
       </div>
     </div>
 
+    <div class="donate-container" id="donate-container">
+      <h4>If you enjoyed this tool, please consider sharing it with your friends! or donate BTC:</h4>
+      <em style="font-size: 16px; cursor: pointer;" id="btc-address">
+          bc1q8zxpazrwjffv2e2x6kzjfcvcfd9yjta0rzw432
+      </em>
+      <p id="copy-message" style="display: none; font-size: 16px; color: rgb(189, 191, 255);">Copied to clipboard!</p>
+  </div>
+
+  <style>
+    /* CSS for the hover color change */
+    #btc-address {
+        color: rgb(255, 255, 255); /* Default color */
+        transition: color 0.3s ease; /* Smooth transition */
+    }
+    #btc-address:hover {
+        color: #ff9900; /* Change to a nice orange on hover */
+    }
+</style>
+  
+  <script>
+      // Get the BTC address element
+      const btcAddress = document.getElementById("btc-address");
+  
+      // Add click event listener to copy text
+      btcAddress.addEventListener("click", function() {
+          const address = btcAddress.textContent; // Get the address text
+  
+          // Use navigator.clipboard API to copy text
+          navigator.clipboard.writeText(address).then(() => {
+              // Show confirmation message
+              const message = document.getElementById("copy-message");
+              message.style.display = "block";
+  
+              // Hide message after 2 seconds
+              setTimeout(() => {
+                  message.style.display = "none";
+              }, 2000);
+          }).catch(err => {
+              console.error("Failed to copy: ", err);
+          });
+      });
+  </script>
+  
+
     <!-- Footer with Collapsible Disclaimer -->
     <footer>
       <div class="footer-text">        

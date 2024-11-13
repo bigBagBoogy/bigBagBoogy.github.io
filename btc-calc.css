@@ -205,3 +205,11 @@ footer {
 #toggleNegative:hover {
   background-color: #e68500;
 }
+
+.donate-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Optional: Center text within each element */
+}
