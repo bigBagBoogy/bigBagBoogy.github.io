@@ -211,8 +211,24 @@ footer {
   flex-direction: column; /* Stack elements vertically */
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
-  text-align: center; /* Optional: Center text within each element */
+  text-align: center; /* Center text within each element */
+  height: auto; /* Default height for mobile */
+  padding: 10px; /* Add some space on mobile */
+  box-sizing: border-box; /* Ensure padding doesn’t affect full height */
 }
+
+/* For larger screens like desktop */
+@media (min-width: 768px) {
+  .donate-container {
+    height: 100%; /* Let the container take the available height of its parent */
+    padding: 0; /* Remove excess padding on larger screens */
+    margin: 0; /* Remove default margin */
+  }
+}
+
+}
+
+
  /* CSS for the hover color change */
  #btc-address {
   color: rgb(255, 255, 255); /* Default color */
