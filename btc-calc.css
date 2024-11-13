@@ -213,3 +213,11 @@ footer {
   align-items: center; /* Center horizontally */
   text-align: center; /* Optional: Center text within each element */
 }
+ /* CSS for the hover color change */
+ #btc-address {
+  color: rgb(255, 255, 255); /* Default color */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+#btc-address:hover {
+  color: #ff9900; /* Change to a nice orange on hover */
+}

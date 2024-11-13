@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "added donate address"
+git commit -m "smaller donate address"
 git push -u origin main
 
 # todo:⭐️
