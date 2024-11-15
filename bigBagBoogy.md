@@ -3,7 +3,7 @@
 git init
 git branch -M main
 git add .
-git commit -m "css"
+git commit -m "EUR/USD and twitter button"
 git push -u origin main
 
 # todo:⭐️

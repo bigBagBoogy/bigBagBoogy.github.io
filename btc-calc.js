@@ -1,5 +1,27 @@
 import { closePopup } from "./popup.js";
 
+let isUSD = true;
+
+function toggleCurrency() {
+  // Toggle between USD and EUR
+  isUSD = !isUSD;
+
+  // Update the button text to show the opposite option
+  document.getElementById("currencyToggleButton").textContent = isUSD
+    ? "Switch to EUR"
+    : "Switch to USD";
+
+  // Update all instances of the currency label (e.g., USD to EUR)
+  document.querySelectorAll(".currency-label").forEach((element) => {
+    element.textContent = isUSD ? "USD" : "EUR"; // Switch between USD and EUR
+  });
+
+  // Refresh the results with the updated currency setting
+  if (currentResults) {
+    displayResults(currentResults); // Re-display results using the current currency format
+  }
+}
+
 // Function to update the explanation text based on the percentage value
 function updatePercentageExplanation() {
   const percentageAdjustmentField = document.getElementById("incrementPercent");
@@ -48,7 +70,6 @@ export function calculateSales({
     remainingBtc -= btcForThisSale;
     currentPrice += priceIncrement;
 
-    // Adjust the next BTC amount if there's a percentage adjustment
     if (!isNaN(percentageAdjustment)) {
       currentBtcToSell *= 1 + percentageAdjustment / 100;
     }
@@ -56,6 +77,9 @@ export function calculateSales({
 
   return { totalCash, remainingBtc, saleRounds };
 }
+
+// Store results for re-display
+let currentResults = null;
 
 function handleCalculateClick() {
   const desiredBtcToSell = parseFloat(
@@ -86,7 +110,7 @@ function handleCalculateClick() {
     return;
   }
 
-  const result = calculateSales({
+  currentResults = calculateSales({
     desiredBtcToSell,
     btcToSell,
     startingPrice,
@@ -95,27 +119,38 @@ function handleCalculateClick() {
     percentageAdjustment,
   });
 
-  // Display the results in the popup
-  document.getElementById("resultsText").innerHTML = formatResults(result);
+  displayResults(currentResults);
   document.getElementById("popupContainer").style.display = "flex";
 }
 
-function formatResults({ totalCash, remainingBtc, saleRounds }) {
+function formatResults({ totalCash, remainingBtc, saleRounds }, currency) {
+  const currencySymbol = currency === "USD" ? "$" : "€";
+
   let salesPlan = saleRounds
     .map(
       (round, index) =>
         `Round ${index + 1}: Sell ${round.btcForThisSale.toFixed(
           4
-        )} BTC at $${round.currentPrice.toFixed(
+        )} BTC at ${currencySymbol}${round.currentPrice.toFixed(
           2
-        )} generating $${round.saleAmount.toFixed(2)} in revenue.<br>`
+        )} generating ${currencySymbol}${round.saleAmount.toFixed(
+          2
+        )} in revenue.<br>`
     )
     .join("");
 
-  salesPlan += `<br>Total cash from sales: $${totalCash.toFixed(2)}<br>`;
+  salesPlan += `<br>Total cash from sales: ${currencySymbol}${totalCash.toFixed(
+    2
+  )}<br>`;
   salesPlan += `Remaining BTC: ${remainingBtc.toFixed(4)} BTC<br>`;
 
   return salesPlan;
+}
+
+function displayResults(results) {
+  const currency = isUSD ? "USD" : "EUR";
+  const formattedResults = formatResults(results, currency);
+  document.getElementById("resultsText").innerHTML = formattedResults;
 }
 
 // Event listeners
@@ -150,12 +185,11 @@ document
     const currentValue = parseFloat(inputField.value);
 
     if (!isNaN(currentValue)) {
-      if (currentValue > 0) {
-        // Convert the value to negative
-        inputField.value = -Math.abs(currentValue);
-      } else {
-        // Convert the value to positive
-        inputField.value = Math.abs(currentValue);
-      }
+      inputField.value =
+        currentValue > 0 ? -Math.abs(currentValue) : Math.abs(currentValue);
     }
   });
+
+document
+  .getElementById("currencyToggleButton")
+  .addEventListener("click", toggleCurrency);

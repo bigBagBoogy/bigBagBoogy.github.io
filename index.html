@@ -15,7 +15,12 @@
         Calculate Your Bitcoin Sale Strategy
         <em style="font-size: 32px">FREE</em>
       </h1>
+      <button id="currencyToggleButton">USD/EUR</button>
+      <a href="https://twitter.com/@bigbagboogie" target="_blank" id="twitterButton">
+        <img src="twitter-icon.svg" alt="Twitter" />
+      </a>
     </div>
+
 
     <div id="btc-calculation-form">
       <!-- Regular input fields -->
@@ -25,13 +30,13 @@
       <label for="btcToSell">BTC to Sell at Each Increment:</label>
       <input type="number" id="btcToSell" placeholder="Enter BTC per sale" required step="0.0001" />
 
-      <label for="startingPrice">Starting Price for Selling (in USD):</label>
+      <label for="startingPrice">Starting Price for Selling (in <span class="currency-label">USD</span>):</label>
       <input type="number" id="startingPrice" placeholder="Enter starting sale price" required />
 
-      <label for="priceIncrement">Price Increment Between Sales (in USD):</label>
+      <label for="priceIncrement">Price Increment Between Sales (in <span class="currency-label">USD</span>):</label>
       <input type="number" id="priceIncrement" placeholder="Enter price increment" required />
 
-      <label for="scenarioTop">Bull Market Top to Simulate (in USD):</label>
+      <label for="scenarioTop">Bull Market Top to Simulate (in <span class="currency-label">USD</span>):</label>
       <input type="number" id="scenarioTop" name="scenarioTop" placeholder="Enter bull market top scenario" required />
 
       <!-- Advanced Exit Strategies Section -->

@@ -237,3 +237,57 @@ footer {
 #btc-address:hover {
   color: #ff9900; /* Change to a nice orange on hover */
 }
+/* Container for the header and button */
+.header-container {
+  position: relative; /* Ensures the button aligns within this container */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes the button to the right */
+  margin-bottom: 20px;
+}
+
+/* Styling for the header */
+.header-container h1 {
+  font-size: 24px;
+}
+
+/* Styling for the currency toggle button */
+#currencyToggleButton {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 6px 12px; /* Smaller padding for desktop view */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px; /* Smaller font for desktop view */
+  transition: background-color 0.3s;
+  position: absolute; /* Position button absolutely within the container */
+  top: 0;
+  right: 0;
+  transform: translateY(25%); /* Adjust for better alignment with the header text */
+}
+
+#currencyToggleButton:hover {
+  background-color: #e57d00;
+}
+/* Styling for the Twitter button */
+#twitterButton {
+  display: inline-block;
+  margin-left: 10px; /* Space between currency toggle and Twitter button */
+  margin-top: 10px;
+  width: 24px; /* Adjust size */
+  height: 24px;
+  text-decoration: none;
+}
+
+#twitterButton img {
+  width: 100%; /* Scale the image to fit */
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+#twitterButton:hover img {
+  transform: scale(1.2); /* Slight zoom on hover */
+}
+
